@@ -3,14 +3,16 @@ Deployment Plan
 
 Alpha Stage
 ------
-> IN PROGRESS (Status: On Schedule)
-* Create Deployment Plan
-* Set Up File Structure
 
+ * Create Deployment Plan
+ * Set Up File Structure
+
+> IN PROGRESS (Status: On Schedule)
   * Basic HTML & CSS
     * Demonstrates Navigation
     * Forms (currently non functional)
     * Limited CSS > font & color styling
+    
   * Set Up Member Account User Database
     * Connect to Sign Up Form 
     * Connect to Log In Form
