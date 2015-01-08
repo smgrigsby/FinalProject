@@ -62,13 +62,11 @@
 								<!--Styling: Divider Bar -->
 							<div class='content_box'>
 								Change Background: <br>
-								<select>
-									<option value='teal'>Teal</option>
-									<option value='coral'>Coral</option>
-									<option value='green'>Green</option>
-									<option value='purple'>Purple</option>
-									<option value='blue'>Blue</option>
-								</select>
+									<input type='radio' name='color' value='teal' checked> Teal <br>
+									<input type='radio' name='color' value='coral'> Coral <br>
+									<input type='radio' name='color' value='green'> Green <br>
+									<input type='radio' name='color' value='purple'> Purple <br>
+									<input type='radio' name='color' value='blue'> Blue <br>
 							</div>
 							<input type="submit" value="Save Changes">
 						</form>
@@ -83,7 +81,7 @@
 									<input type="password" name="password"> <br>
 								New Password <br>
 									<input type="password" name="newpass"> <br>
-								Password Strength <!-- Strength Indicator -->
+								Password Strength <!-- Strength Indicator --> <br>
 								Confirm New Password <br>
 									<input type="text" name="confnewpass"> <br>
 									<!-- Error Message -->
@@ -96,6 +94,20 @@
 
 					<!-- BEGIN Payments Tab -->
 					<div id='payment'>
+						<form>
+							<div class='content_box'>
+								Name (As shown on card) <br>
+									<input type="text" name="password"> <br>
+								New Password <br>
+									<input type="password" name="newpass"> <br>
+								Password Strength <!-- Strength Indicator --> <br>
+								Confirm New Password <br>
+									<input type="text" name="confnewpass"> <br>
+									<!-- Error Message -->
+							</div>
+								<!--Styling: Divider Bar -->
+							<input type="submit" value="Save Changes">
+						</form>
 					</div>
 					<!-- END Payments Tab -->
 
