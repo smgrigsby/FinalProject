@@ -1,6 +1,33 @@
 Deployment Plan
 ======
 
+Branching and Merging
+------
+  * create new local branch
+    * $ git branch developmentbranch
+
+  * checking which local branch you're in
+    * $ git branch
+
+  * switching branches
+    * $ git checkout developmentbranch
+    * commit files
+      * $ touch file.html
+      * $ git add file.html
+      * $ git commit -m 'message'
+      * $ git push
+        * note: git push only works if it finds a branch with a matching name in your repo
+        
+  * merging branches
+    * switch to master branch
+      * $ git checkout master
+    * merge
+      * $ git merge developmentbranch
+      * $ git push
+    * delete local branch (optional)
+      * $ git branch -d developmentbranch
+
+
 Alpha Stage
 ------
 
