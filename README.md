@@ -1,14 +1,12 @@
 Deployment Plan
 ======
 
-Branching and Merging
+Branching and Merging Notes
 ------
   * create new local branch
     * $ git branch developmentbranch
-
   * checking which local branch you're in
     * $ git branch
-
   * switching branches
     * $ git checkout developmentbranch
     * commit files
@@ -17,7 +15,6 @@ Branching and Merging
       * $ git commit -m 'message'
       * $ git push
         * note: git push only works if it finds a branch with a matching name in your repo
-        
   * merging branches
     * switch to master branch
       * $ git checkout master
