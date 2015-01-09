@@ -30,22 +30,19 @@ Alpha Stage
 
  * Create Deployment Plan
  * Set Up File Structure
-
-  * Basic HTML & CSS
-    * Demonstrates Navigation
-    * Forms (currently non functional)
-    * Limited CSS > font & color styling
-
+ * Basic HTML & CSS
+  * Demonstrates Navigation
+  * Forms (currently non functional)
+  * Limited CSS > font & color styling
  > IN PROGRESS (Status: On Schedule)
-  * Set Up Member Account User Database
-    * Connect to Sign Up Form 
-    * Connect to Log In Form
- 
-  * QA Testing: Sign Up/Sign In Process
-  * Set Up Viewer Account User Database
-    * Dashboard Invite Manager
-    * Generate Email with Invite Form Link
-  * QA Testing: Send Invites, Sign Up, Log In, Delete
+ * Set Up Member Account User Database
+  * Connect to Sign Up Form 
+  * Connect to Log In Form
+ * QA Testing: Sign Up/Sign In Process
+ * Set Up Viewer Account User Database
+  * Dashboard Invite Manager
+  * Generate Email with Invite Form Link
+ * QA Testing: Send Invites, Sign Up, Log In, Delete
 
 
 Beta Stage
