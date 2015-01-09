@@ -168,15 +168,58 @@
 				</div>
 
 					<!-- BEGIN Active Accounts Tab -->
+	<p>------------------------------------------------------------------- ACTIVE ACCOUNTS</p>
+	<!--Temporary divider being used during development, not part of end design-->
 					<div id='active'>
+						<table>
+							<tr>
+								<td> </td>
+								<td>Display Name</td>
+								<td>City, State</td>
+								<td>User Since</td>
+							</tr>
+							<tr>
+								<td><img src='#'></td>
+								<td>[User]</td>
+								<td>[Address]</td>
+								<td>[Date]</td>
+							</tr>
+							<tr>
+								<td><img src='#'></td>
+								<td>+ Invite New User</td>
+						</table>
 					</div>
 					<!-- END Active Accounts Tab -->
 
+					<!-- BEGIN Send Invites Tab -->
+	<p>------------------------------------------------------------------- SEND INVITES</p>
+	<!--Temporary divider being used during development, not part of end design-->
 					<div id='newinvite'>
-					</div>
+						<form>
+							Name <br>
+								<input type="text" name="sendto"> <br>
+							Email Address <br>
+								<input type="text" name="sendemail"> <br>
+							Personal Message <br>
+								<input type="text" name="sendmessage"> <br>
+								<!--Styling: Divider Bar -->
+								<!--Error Message-->
+							<input type="submit" value="Send Message">
+						</form>
 
-					<div id='messages'>
+						<h4>Pending Invites</h4>
+							<p>You have no pending invites at this time </p>
 					</div>
+					<!-- END Send Invites Tab -->
+
+					<!-- BEGIN Messages Tab -->
+	<p>------------------------------------------------------------------- MESSAGES</p>
+	<!--Temporary divider being used during development, not part of end design-->
+					<div id='messages'>
+						<h4>Messages</h4>
+							<p>You have messages at this time </p>
+					</div>
+					<!-- END Messages Tab -->
 
 				</section>
 			</div>
