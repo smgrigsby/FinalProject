@@ -14,24 +14,12 @@
 			<a href='signup.html'>Sign In</a>
 		</header>
 
-		<form>
+		<form action="db/addmember.php" method="POST">
 			<h3>CREATE YOUR ACCOUNT</h3>
-			Your Name: <br>
-			<input type="text" name="name">
-			<br>
-
-			Email Address: <br>
-			<input type="text" name="email">
-			<br>
-
-			Password: <br>
-			<input type="password" name="password">
-			<br>
-			
-			Verify Password: <br>
-			<input type="password" name="repeat_password">
-			<br>
-			<br>
+			Your Name: <input type="text" name="name" required><br />
+			Email Address: <input type="text" name="email" required><br />
+			Password: <input type="password" name="password" required><br />
+			Verify Password:<input type="password" name="repeat_password" required><br /><br />
 
 			<input type="submit" value="Sign Up">
 		</form>
