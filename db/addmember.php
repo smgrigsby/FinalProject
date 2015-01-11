@@ -14,7 +14,8 @@
 		$stmt->bindParam(':memberemail', $memberemail);
 		$stmt->bindParam(':memberpassword', $memberpassword);
 		$stmt->execute();
-		header('Location: signup.html');
+		header('Location: ../signup.html');
 		die();
-	}else{echo "<h2>Sorry this is not a valid email.</h2>";}
+	}else{
+		echo "<h2>Sorry this is not a valid email.<a href='../index.html'>RETURN</a></h2>";}
 ?>
