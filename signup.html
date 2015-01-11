@@ -14,15 +14,10 @@
 			<a href='index.html'>Not a Member? Sign Up!</a>
 		</header>
 
-		<form>
+		<form action="db/memberlogin.php" method="POST">
 			<h3>LOG INTO YOUR ACCOUNT</h3>
-			Email Address: <br>
-			<input type="text" name="email">
-			<br>
-
-			Password: <br>
-			<input type="password" name="password">
-			<br>
+			Email Address:<input type="text" name="email" required><br>
+			Password:<input type="password" name="password" required><br>
 
 			<input type="checkbox" name="remember">Remember Me <br><br>
 			<input type="submit" value="Sign In">
