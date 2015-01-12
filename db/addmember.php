@@ -3,10 +3,11 @@
 	$pass="root";
 	$dbh = new PDO('mysql:host=localhost;dbname=FinalProject;port=8889', $user, $pass);
 
+
 	if (filter_var(($_POST['memberemail']), FILTER_VALIDATE_EMAIL)){ //checks that email is valid
 		if (($_POST['memberpassword']) == ($_POST['repeat_password'])){ //checks that password inputs match
 
-		//takes input from form and assigns to variables
+			//takes input from form and assigns to variables
 		$membername = $_POST['membername']; 
 		$memberemail = $_POST['memberemail'];
 		$memberpassword = $_POST['memberpassword'];
