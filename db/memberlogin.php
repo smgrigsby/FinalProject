@@ -7,7 +7,7 @@
 		$memberemail = $_POST['memberemail'];
 		$memberpassword = $_POST['memberpassword'];
 
-		$query = "SELECT * FROM member WHERE memberemail='$memberemail' and password='$memberpassword'";
+		$query = "SELECT * FROM member WHERE memberemail='$memberemail'";
 		$result = mysql_query($query);
 		$count = mysql_num_rows($result);
 
