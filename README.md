@@ -39,8 +39,8 @@ Alpha Stage
   * Connect to Log In Form
  
  > IN PROGRESS (Status: On Schedule)
- * QA Testing: Sign Up/Sign In Process
- 
+  * QA Testing: Sign Up/Sign In Process
+
  * Set Up Viewer Account User Database
   * Dashboard Invite Manager
   * Generate Email with Invite Form Link
