@@ -3,7 +3,6 @@
 <html lang="en">
 	<head>
 		<title>Log In</title>
-		
 	</head>
 	
 	<body>
@@ -12,13 +11,13 @@
 			<a href='index.html'>Not a Member? Sign Up!</a>
 		</header>
 
-		<form action="db/memberlogin.php" method="POST">
+		<form method="POST">
 			<h3>LOG INTO YOUR ACCOUNT</h3>
-			Email Address:<input type="text" name="memberemail" required><br>
-			Password:<input type="password" name="memberpassword" required><br>
+			Email Address:<input name= "signinButton" type="text" id="user" required><br />
+			Password:<input name= "signinButton" type="password" id="pass" required><br />
 
-			<input type="checkbox" name="remember">Remember Me <br><br>
-			<input type="submit" value="Sign In">
+			<!--<input type="checkbox" name="remember">Remember Me <br><br>-->
+			<input name= "signinButton" type="submit" id="signinButton" value="Sign In"/>
 		</form>
 
 		<footer>
