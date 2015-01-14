@@ -6,7 +6,7 @@ class PDB{
 
 	private $dbhost = 'localhost';
 	private $dbport = '8889';
-	private $dbname = 'dossier_db';
+	private $dbname = 'FinalProject';
 	private $dbuser = 'root';
 	private $dbpass = 'root';
 	
