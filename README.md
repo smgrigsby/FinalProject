@@ -34,13 +34,13 @@ Alpha Stage
   * Demonstrates Navigation
   * Forms (currently non functional)
   * Limited CSS > font & color styling
- 
-> IN PROGRESS (Status: On Schedule)
  * Set Up Member Account User Database
   * Connect to Sign Up Form 
   * Connect to Log In Form
  
+ > IN PROGRESS (Status: On Schedule)
  * QA Testing: Sign Up/Sign In Process
+ 
  * Set Up Viewer Account User Database
   * Dashboard Invite Manager
   * Generate Email with Invite Form Link
