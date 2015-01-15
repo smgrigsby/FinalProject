@@ -1,5 +1,5 @@
 <?php
-
+//refresh
 error_reporting(E_ALL);
 
 require_once("reqs/common.php");

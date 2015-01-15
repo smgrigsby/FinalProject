@@ -51,9 +51,11 @@
 
 			success: function(response){
 				if (response.error){
+					console.log("This notifies you if there is an error");
 					alert(response.error);	
 				}else{
-					window.location.assign('admin.html');
+					console.log("This notifies you if it is working");
+					window.location.assign('signin.html');
 				}	
 			}	
 		});
@@ -99,15 +101,15 @@
 		});
 	});
 
-	$(function(){
-		$("#projDue"). datepicker();
-	});
+	// $(function(){
+	// 	$("#projDue"). datepicker();
+	// });
 
-	$(function() {
-    $( "#resizable" ).resizable({
-      handles: "se"
-    });
-  });
+	// $(function() {
+ //    $( "#resizable" ).resizable({
+ //      handles: "se"
+ //    });
+ //  });
 	
  // ************** Update Project Function ****************
 		
