@@ -3,9 +3,6 @@
 <html lang="en">
 	<head>
 		<title>Log In</title>
-		<link href="css/main.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
@@ -14,13 +11,13 @@
 			<a href='index.html'>Not a Member? Sign Up!</a>
 		</header>
 
-		<form action="db/memberlogin.php" method="POST">
+		<form action="xhr/signin.php" method="POST">
 			<h3>LOG INTO YOUR ACCOUNT</h3>
-			Email Address:<input type="text" name="memberemail" required><br>
-			Password:<input type="password" name="memberpassword" required><br>
+			Username:<input name= "username" type="text" id="user" required><br />
+			Password:<input name= "password" type="password" id="pass" required><br />
 
-			<input type="checkbox" name="remember">Remember Me <br><br>
-			<input type="submit" value="Sign In">
+			<!--<input type="checkbox" name="remember">Remember Me <br><br>-->
+			<input type="submit" id="signinButton" value="Sign In"/>
 		</form>
 
 		<footer>
@@ -34,6 +31,14 @@
 
 			<p> copyright 2014 BabyGrigsby </p>
 		</footer>
+
+		<!-- END HTML, BEGIN LINKS AND FORMATTING -->
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> 
+    	
+
+    	<link href="css/main.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		
 	</body>
 	</html>
