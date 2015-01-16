@@ -50,7 +50,7 @@
 			<a href='index.html'>Not a Member? Sign Up!</a>
 		</header>
 
-		<form action="xhr/signin.php" method="POST">
+		<form action="login.php" method="POST">
 			<h3>LOG INTO YOUR ACCOUNT</h3>
 			Username:<input name= "username" type="text" id="user" required><br />
 			Password:<input name= "password" type="password" id="pass" required><br />
