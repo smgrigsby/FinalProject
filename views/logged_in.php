@@ -1,13 +1,10 @@
-<?php session_start(); ?>
+<!-- if you need user information, just put them into the $_SESSION variable and output them here -->
+<?php $_SESSION['user_email']; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Dashboard</title>
-		<link href="css/main.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-		<!-- Script JQUERY >> 'Tabs' -->
 	</head>
 	
 	<body>
@@ -29,11 +26,8 @@
 			<div id='dashboard'>
 				<section class='dash_panel'>
 						<!-- USERNAME placeholder text -->
-					<h3> Welcome [USERNAME]!</h3>
-					<?php 
-						echo "<h3>Welcome ".$_SESSION["username"]. "</h3><br>"; 
-					?>
-					<a href='#'>Logout</a>
+					<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
+					<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
 						<!-- Content, TBA during Beta -->
 				</section>
 			</div>
@@ -44,8 +38,8 @@
 <!--Temporary divider being used during development, not part of end design-->
 			<div id='settings'>
 				<section class='dash_panel'>
-					<h3> Welcome [USERNAME] </h3>
-					<a href='#'>Logout</a>
+					<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
+					<a href='index.php?logout'>Logout</a>
 
 				<h2>Settings</h2>
 				<div class='sec_nav'>
@@ -61,22 +55,21 @@
 	<p>------------------------------------------------------------------- ACCOUNT INFORMATION</p>
 	<!--Temporary divider being used during development, not part of end design-->
 					<div id='account'>
-						<form action="update_member.php" method="POST">
+						<form <?php echo 'action="update_member.php?id='. $_SESSION['user_id'].'" method="GET"' ?> >
 							<div class='content_box'>
-								First Name: <input type="text" name="fname"> <br />
-								Last Name: <input type="text" name="lname"> <br />
-								Birthday(MM/DD/YYYY): <input type="text" name="birthday"> <br />
-								Email Address: <input type="text" name="email"> <br />
+								First Name: <input type="text" name="fname" <?php echo 'value="'.$_SESSION['f_name'] .'">' ?> <br />
+								Last Name: <input type="text" name="lname" <?php echo 'value="'.$_SESSION['l_name'] .'">' ?> <br />
+								Email Address: <input type="text" name="email" <?php echo 'value="'.$_SESSION['user_email'] .'">' ?><br />
 								<a href='#'> + Add Spouse </a> <!--JS: Creates Additional Input Fields -->
 							</div>
 								<!--Styling: Divider Bar -->
 							<div class='content_box'>
 								Change Background: <br>
-									<input type='radio' name='color' value='teal' checked> Teal <br>
-									<input type='radio' name='color' value='coral'> Coral <br>
-									<input type='radio' name='color' value='green'> Green <br>
-									<input type='radio' name='color' value='purple'> Purple <br>
-									<input type='radio' name='color' value='blue'> Blue <br>
+									<input type='radio' name='color' value='4BC0B3' checked> Teal <br>
+									<input type='radio' name='color' value='F1676C'> Coral <br>
+									<input type='radio' name='color' value='A8D058'> Green <br>
+									<input type='radio' name='color' value='7D73B5'> Purple <br>
+									<input type='radio' name='color' value='5EC6F1'> Blue <br>
 							</div>
 							<input type="submit" value="Save Changes">
 						</form>
@@ -159,8 +152,8 @@
 <!--Temporary divider being used during development, not part of end design-->
 			<div id='invites'>
 				<section class='dash_panel'>
-					<h3> Welcome [USERNAME] </h3>
-					<a href='#'>Logout</a>
+					<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
+					<a href='index.php?logout'>Logout</a>
 
 				<h2>Manage Invites</h2>
 				<div class='sec_nav'>
@@ -234,13 +227,20 @@
 <!--Temporary divider being used during development, not part of end design-->
 			<div id='pages'>
 				<section class='dash_panel'>
-					<h3> Welcome [USERNAME] </h3>
-					<a href='#'>Logout</a>
+					<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
+					<a href='index.php?logout'>Logout</a>
 						<!-- Content, TBA during Beta -->
 				</section>
 			</div>
 			<!-- END Custom Pages Panel -->
 		</div>
+
+		<!-- END HTML, BEGIN LINKS AND FORMATTING -->
+    	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+    	<link href="css/main.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	</body>
 	</html>
