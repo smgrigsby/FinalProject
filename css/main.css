@@ -2,7 +2,36 @@ body {
 	font: 1em 'Open Sans', sans-serif;
 	color: #293542;
 }
-
+/* HEADER **********************************************/
+header {
+	background-color: #293542;	
+}
 h1 {
+	color: #fff;
+	margin: 20px;
+	padding: 10px;
+	font-size: 30px;
 	font-family: 'Alfa Slab One', cursive;
+}
+
+header a {
+	float: right;
+	color: #fff;
+	margin-right: 20px;
+	padding: 10px;
+}
+form {
+	margin: 100px;
+}
+footer {
+	background-color: #293542;	
+}
+footer li {
+	display: inline;
+	margin: 20px;
+
+}
+footer li a {
+		color: #fff;
+		padding: 10px;	
 }
