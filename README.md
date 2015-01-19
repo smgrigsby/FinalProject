@@ -37,14 +37,13 @@ Alpha Stage
  * Set Up Member Account User Database
   * Connect to Sign Up Form 
   * Connect to Log In Form
-
-  
- > IN PROGRESS (Status: On Schedule)
-  * QA Testing: Sign Up/Sign In Process
-
- * Set Up Viewer Account User Database
-  * Dashboard Invite Manager
-  * Generate Email with Invite Form Link
+ * QA Testing: Sign Up/Sign In Process
+ 
+> IN PROGRESS (Status: Behind Schedule)
+  * Set Up Viewer Account User Database
+   * Dashboard Invite Manager
+   * Generate Email with Invite Form Link
+ 
  * QA Testing: Send Invites, Sign Up, Log In, Delete
 
 
