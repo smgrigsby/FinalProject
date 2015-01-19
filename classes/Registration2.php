@@ -80,6 +80,9 @@ class Registration
                 // escaping, additionally removing everything that could be (html/javascript-) code
                 $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
                 $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
+                $blog_id = $this->db_connection->real_escape_string(strip_tags($_GET['id'], ENT_QUOTES));
+                $user_type = "2";
+
 
                 $user_password = $_POST['user_password_new'];
 
@@ -87,7 +90,7 @@ class Registration
                 // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
                 // PHP 5.3/5.4, by the password hashing compatibility library
                 $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
-                $blog_id = password_hash($user_name, PASSWORD_DEFAULT);
+                
 
                 // check if user or email address already exists
                 $sql = "SELECT * FROM users WHERE user_name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
@@ -97,8 +100,8 @@ class Registration
                     $this->errors[] = "Sorry, that username / email address is already taken.";
                 } else {
                     // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, blog_id, user_password_hash, user_email)
-                            VALUES('" . $user_name . "', '". $blog_id ."', '" . $user_password_hash . "', '" . $user_email . "');";
+                    $sql = "INSERT INTO users (user_type, user_name, blog_id, user_password_hash, user_email)
+                            VALUES('" . $user_type . "', '" . $user_name . "', '". $blog_id ."', '" . $user_password_hash . "', '" . $user_email . "');";
                     $query_new_user_insert = $this->db_connection->query($sql);
 
                     // if user has been added successfully

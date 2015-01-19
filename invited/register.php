@@ -26,9 +26,12 @@ if (isset($registration)) {
             <a href='index.php'>Sign In</a>
         </header>
 <!-- register form -->
-<form method="post" action="register.php" name="registerform">
-    <h3>CREATE YOUR ACCOUNT</h3>
 
+<form method="post" action="viewer_register.php" name="registerform">
+    <h3>Welcome! You have been invited to view your friend's page but first you'll need to create an account.</h3>
+
+    <?php echo '<input type="hidden" name="blog_id" value="'. $_GET['id'].'" >' ?>
+    <input type="hidden" name="user_type" value="2">
     <!-- the user name input field uses a HTML5 pattern check -->
     <label for="login_input_username">Username </label><br />
     <input id="login_input_username" title="(only letters and numbers, 2 to 64 characters)" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required /><br />
@@ -46,22 +49,8 @@ if (isset($registration)) {
 
 </form>
 
-<section>
-            <h2>Protecting Privacy, Sharing Stories. <br>
-                Join Today for Free! </h2>
-            <p> Being a parent is an extraordinary adventure. From their first tooth to their first prom, every day of your child's life is full of moments worth sharing. We give you the power to choose who you share those moments with. </p>
-            <a href='#'> LEARN MORE </a>
-        </section>
-
+    
         <footer>
-            <ul>
-                <li><a href='#'>About Us</a></li>
-                <li><a href='#'>Jobs</a></li>
-                <li><a href='#'>Advertising</a></li>
-                <li><a href='#'>Contact Us</a></li>
-                <li><a href='#'>Privacy & Terms</a></li>
-            </ul>
-
             <p> copyright 2014 BabyGrigsby </p>
         </footer>
 

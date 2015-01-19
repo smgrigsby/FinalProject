@@ -164,35 +164,22 @@
 					<!-- BEGIN Active Accounts Tab -->
 	
 					<div id='active'>
-
 						<table>
 							<tr>
 								<td>Img</td>
-								<td>Username</td>
-								<td>Nickname</td>
+								<td>Display Name</td>
 								<td>City, State</td>
+								<td>User Since</td>
 							</tr>
-						<?php 
-						$user="root";
-						$pass="root";
-							$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
-							$stmt=$dbh->prepare("SELECT * FROM users WHERE user_type = '2' && blog_id = :b_id");
-							$stmt->bindValue(':b_id', $_SESSION['blog_id'],  PDO::PARAM_INT);
-							$stmt->execute();
-							$result=$stmt->fetchall(PDO::FETCH_ASSOC);
-								foreach($result as $row){
-									echo '
-									<tr>
-										<td><img src="assets/default_profile_pic.jpg" alt="'.$row['user_name'].'" 
-										 width="50" height="50"/></td>
-										<td>'.$row['user_name'].'</td>
-										<td>N/A</td>
-										<td>'.$row['address'].'</td>
-										<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
-									</tr>
-									';
-								}
-						?>
+							<tr>
+								<td>Img</td>
+								<td>[User]</td>
+								<td>[Address]</td>
+								<td>[Date]</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>+ Invite New User</td>
 						</table>
 					</div>
 					<!-- END Active Accounts Tab -->
@@ -201,13 +188,8 @@
 	
 					<div id='newinvite'>
 
-						<p>Copy the following and paste into an email:</p> 
-						<p>Hi, I wanted to invite you to set up an account with BabyGrigsby so I can share stories and photos
-							of the kids with you. Just paste this link into your browser to sign up!</p>
-							<p>
-						<?php echo 'http://localhost:8889/FinalProject/create_account.php?id="'.$_SESSION['blog_id'].'"' ?></p>
+						Copy Link: <?php echo 'http://localhost:8889/FinalProject/viewer_register.php?id="'.$_SESSION['blog_id'].'"' ?>
 			
-						<h4>This feature is in development</h4>
 						<form>
 							Name <br>
 								<input type="text" name="sendto"> <br>
@@ -220,6 +202,7 @@
 							<input type="submit" value="Send Message">
 						</form>
 
+						<h4>This feature is in development</h4>
 						<h4>Pending Invites</h4>
 							<p>You have no pending invites at this time </p>
 					</div>
