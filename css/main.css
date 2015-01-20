@@ -1,6 +1,8 @@
 body {
 	font: 1em 'Open Sans', sans-serif;
 	color: #293542;
+	margin: 0;
+	background-color: #FAFAFA;
 }
 /* HEADER **********************************************/
 header {
@@ -8,30 +10,85 @@ header {
 }
 h1 {
 	color: #fff;
-	margin: 20px;
+	margin-left: 20px;
+	margin-top: -20px;
 	padding: 10px;
-	font-size: 30px;
-	font-family: 'Alfa Slab One', cursive;
+	font-size: 40px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 header a {
 	float: right;
 	color: #fff;
 	margin-right: 20px;
+	margin-top: 15px;
 	padding: 10px;
 }
-form {
-	margin: 100px;
+
+#signin {
+	background-color: #fff;
+	border: 1px solid #E6E6E6;
+	border-radius: 5px;
+	padding: 10px;
+	width: 300px;
+	margin-left: 33%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
 }
+
+#signin label {
+	font-size: 12px;
+
+	/*font-weight: bold;*/
+}
+
+#signin h3 {
+	text-align: center;
+}
+
+#ckbx { margin: 5px;}
+
+#signin .login_input {
+	height: 26px;
+	background-color: #FAFAFA;
+	width: 98%;
+	margin-bottom: 10px;
+	border: 1px solid #E6E6E6;
+}
+
+#signin .submitBtn {
+	background-color: #293542;
+	border: none;
+	padding: 10px;
+	color: #fff;
+	font-size: 14px;
+	margin-left: 220px;
+	margin-bottom: 10px;
+}
+
+/* FOOTER **********************************************/
 footer {
-	background-color: #293542;	
+	background-color: #293542;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 footer li {
 	display: inline;
-	margin: 20px;
+	padding: 10px;
+	float: left;
 
 }
-footer li a {
+footer li a, footer p {
+		font-size: .8em;
 		color: #fff;
-		padding: 10px;	
+		padding: 20px;
+		font-weight: lighter;
+		text-decoration: none;
+}
+
+footer p {
+	padding: 10px;
+	text-align: right;
 }

@@ -27,24 +27,29 @@ if (isset($login)) {
            
         </header>
 <!-- login form box -->
+<div id='signin'>
 <form method="post" action="index.php" name="loginform">
+    <h3>LOG INTO YOUR ACCOUNT</h3>
 
-    <label for="login_input_username">Username</label>
-    <input id="login_input_username" class="login_input" type="text" name="user_name" required />
+    <label for="login_input_username">USERNAME</label><br />
+    <input id="login_input_username" class="login_input" type="text" name="user_name" required /><br />
 
-    <label for="login_input_password">Password</label>
-    <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required />
+    <label for="login_input_password">PASSWORD</label><br />
+    <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required /><br />
 
-    <input type="submit"  name="login" value="Log in" />
+    <input type="checkbox" id="ckbx"><label>REMEMEBER ME</label><br />
+
+    <input class="submitBtn" type="submit"  name="login" value="SIGN IN" />
 
 </form>
+</div>
 <footer>
             <ul>
-                <li><a href='#'>About Us</a></li>
-                <li><a href='#'>Jobs</a></li>
-                <li><a href='#'>Advertising</a></li>
-                <li><a href='#'>Contact Us</a></li>
-                <li><a href='#'>Privacy & Terms</a></li>
+                <li><a href='#'>ABOUT US</a></li>
+                <li><a href='#'>JOBS</a></li>
+                <li><a href='#'>ADVERTISING</a></li>
+                <li><a href='#'>CONTACT US</a></li>
+                <li><a href='#'>PRIVACY & TERMS</a></li>
             </ul>
 
             <p> copyright 2014 BabyGrigsby </p>
@@ -55,7 +60,7 @@ if (isset($login)) {
         
 
         <link href="css/main.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
         
     </body>
