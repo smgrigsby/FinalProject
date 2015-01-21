@@ -7,16 +7,20 @@
 	</head>
 	
 	<body>
-		<header>
+		<header id="mem_dash">
 			<h1>BabyGrigsby</h1>
 		</header>
 
 		<div id="main_nav">
-		<ul>
-			<li><a href='#dashboard'>Dashboard</a></li> <!-- links to Dashboard Panel -->
-			<li><a href='#settings'>Settings</a></li> <!-- links to Settings Panel -->
-			<li><a href='#invites'>Invites</a></li> <!-- links to Invites Panel -->
-			<li><a href='#pages'>Custom Pages</a></li> <!-- links to Custom Pages Panel -->
+		<ul id="side_nav">
+			<li><img src="assets/icon_dash.png" height="75px" width="75x"/><br />
+				<a href='#dashboard'>Dashboard</a></li> <!-- links to Dashboard Panel -->
+			<li><img src="assets/icon_sett.png" height="75px" width="75x"/><br />
+				<a href='#settings'>Settings</a></li> <!-- links to Settings Panel -->
+			<li><img src="assets/icon_invi.png" height="75px" width="75x"/><br />
+				<a href='#invites'>Invites</a></li> <!-- links to Invites Panel -->
+			<li><img src="assets/icon_page.png" height="75px" width="75x"/><br />
+				<a href='#pages'>Custom Pages</a></li> <!-- links to Custom Pages Panel -->
 		</ul>
 
 			<!-- BEGIN Dashboard Panel -->
@@ -286,12 +290,15 @@
 			</div>
 			<!-- END Custom Pages Panel -->
 		</div>
+		<footer>
+			<p> copyright 2014 BabyGrigsby </p>
+		</footer>
 
 		<!-- END HTML, BEGIN LINKS AND FORMATTING -->
     	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     	
-    	<link href="css/jquery-ui.structure.min.css" rel="stylesheet">
+    	<!-- <link href="css/jquery-ui.structure.min.css" rel="stylesheet"> -->
     	<link href="css/main.css" rel="stylesheet">
 
 		<!-- <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'> -->
@@ -300,8 +307,10 @@
 		<script>
 		$(function() {
 			$("#main_nav").tabs();
+			// $("#dashboard").tabs();
 			$("#settings").tabs();
 			$("#invites").tabs();
+			// $("#pages").tabs();
 			
 		});
 		</script>

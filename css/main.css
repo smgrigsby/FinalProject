@@ -32,9 +32,10 @@ header a {
 	color: #fff;
 }
 
-#register h1 {
+#register h1, #mem_dash h1 {
 	padding-top: 30px;
 }
+
 
 /* FORMS **********************************************/
 
@@ -141,3 +142,83 @@ footer p {
 	padding: 10px;
 	text-align: right;
 }
+
+/* DASHBOARD LAYOUT **********************************************/
+
+.ui-tabs{
+	position:relative;
+	padding:.2em
+}
+.ui-tabs .ui-tabs-nav{
+	margin:0;
+	padding:.2em .2em 0
+}
+.ui-tabs .ui-tabs-nav li{
+	list-style:none;
+	/*float:left;*/
+	position:relative;
+	top:0;
+	margin:1px .2em 0 0;
+	border-bottom-width:0;
+	padding:0;
+	white-space:nowrap
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+	/*float:left;*/
+	padding:.5em 1em;
+	text-decoration:none
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	margin-bottom:-1px;
+	padding-bottom:1px
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor{
+	cursor:text
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor{
+	cursor:pointer
+}
+.ui-tabs .ui-tabs-panel{
+	display:block;
+	border-width:0;
+	padding:1em 1.4em;
+	background:none
+}
+
+#side_nav{
+	float: left;
+	background-color: #fff;
+	margin-top: -30px;
+	margin-right: 30px;
+}
+
+#side_nav li{
+	text-transform: uppercase; 
+	padding-top: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+#side_nav li a{
+	color: #293542;
+}
+
+.ui-tooltip{padding:8px;
+	position:absolute;
+	z-index:9999;
+	max-width:300px;
+	-webkit-box-shadow:0 0 5px #aaa;
+	box-shadow:0 0 5px #aaa
+}
+body .ui-tooltip{
+	border-width:2px
+}
+
+
+
+
