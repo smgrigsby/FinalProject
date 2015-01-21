@@ -41,7 +41,7 @@ if (isset($login)) {
     if (isset($login)) {
         if ($login->errors) {
             foreach ($login->errors as $error) {
-            echo '<div class="errmess">'.$error.'</div>';
+            echo $error;
             }
         } 
     }
