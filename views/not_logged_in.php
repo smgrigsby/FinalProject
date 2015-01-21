@@ -1,11 +1,7 @@
 <?php
 // show potential errors / feedback (from login object)
 if (isset($login)) {
-    if ($login->errors) {
-        foreach ($login->errors as $error) {
-            echo $error;
-        }
-    }
+    
     if ($login->messages) {
         foreach ($login->messages as $message) {
             echo $message;
@@ -38,9 +34,21 @@ if (isset($login)) {
     <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required /><br />
 
     <input type="checkbox" id="ckbx"><label>REMEMEBER ME</label><br />
-
     <input class="submitBtn" type="submit"  name="login" value="SIGN IN" />
 
+    <?php 
+
+    if (isset($login)) {
+        if ($login->errors) {
+            foreach ($login->errors as $error) {
+            echo '<div class="errmess">'.$error.'</div>';
+            }
+        } 
+    }
+
+    ?>
+
+    
 </form>
 </div>
 <footer>
