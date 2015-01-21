@@ -17,15 +17,17 @@ if (isset($registration)) {
 
 <html lang="en">
     <head>
-        <title>WELCOME!</title>
+        <title>Sign Up for a free BabyGrigsby Account!</title>
     </head>
     
     <body>
-        <header>
-            <h1>BabyGrigsby</h1>
+        <header id="register">
             <a href='index.php'>Sign In</a>
+            <h1>BabyGrigsby</h1>     
         </header>
+
 <!-- register form -->
+<div id='signup'>
 <form method="post" action="register.php" name="registerform">
     <h3>CREATE YOUR ACCOUNT</h3>
 
@@ -37,29 +39,31 @@ if (isset($registration)) {
     <label for="login_input_email">User's email</label><br />
     <input id="login_input_email" class="login_input" type="email" name="user_email" required /><br />
 
-    <label for="login_input_password_new">Password </label><br />
-    <input id="login_input_password_new" title="(min. 6 characters)" class="login_input" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" /><br />
-
-    <label for="login_input_password_repeat">Repeat password</label><br />
-    <input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" /><br />
-    <input type="submit"  name="register" value="Sign Up" />
+    <div class="form_row">
+        <label for="login_input_password_new">Password </label>
+        <input id="login_input_password_new" title="(min. 6 characters)" class="login_input" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />
+    </div><div class="form_row">
+        <label for="login_input_password_repeat">Verify password</label>
+        <input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
+    </div>
+    <input class="submitBtn" type="submit"  name="register" value="Sign Up" />
 
 </form>
-
-<section>
+</div>
+<section id="cta">
             <h2>Protecting Privacy, Sharing Stories. <br>
                 Join Today for Free! </h2>
             <p> Being a parent is an extraordinary adventure. From their first tooth to their first prom, every day of your child's life is full of moments worth sharing. We give you the power to choose who you share those moments with. </p>
-            <a href='#'> LEARN MORE </a>
+            <a href='#'> LEARN MORE > </a>
         </section>
 
         <footer>
             <ul>
-                <li><a href='#'>About Us</a></li>
-                <li><a href='#'>Jobs</a></li>
-                <li><a href='#'>Advertising</a></li>
-                <li><a href='#'>Contact Us</a></li>
-                <li><a href='#'>Privacy & Terms</a></li>
+                <li><a href='#'>ABOUT US</a></li>
+                <li><a href='#'>JOBS</a></li>
+                <li><a href='#'>ADVERTISING</a></li>
+                <li><a href='#'>CONTACT US</a></li>
+                <li><a href='#'>PRIVACY & TERMS</a></li>
             </ul>
 
             <p> copyright 2014 BabyGrigsby </p>
@@ -70,9 +74,9 @@ if (isset($registration)) {
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
         <link href="css/main.css" rel="stylesheet">
-        <link href="css/jquery-ui.min.css" rel="stylesheet">
+        <link href="css/jquery-ui.min.css" rel="stylesheet"> 
 
-        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
         <script>
             $(function() {

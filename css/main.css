@@ -26,36 +26,48 @@ h1 {
 }
 
 header a {
-	float: right;
+	position: absolute;
+	right: 20px; 
+	top: 20px;
 	color: #fff;
-	margin-right: 20px;
-	margin-top: 15px;
-	padding: 10px;
 }
 
-#signin {
+#register h1 {
+	padding-top: 30px;
+}
+
+/* FORMS **********************************************/
+
+#signin, #signup {
 	background-color: #fff;
 	border: 1px solid #E6E6E6;
 	border-radius: 5px;
 	padding: 10px;
+
+}
+#signup {
+	margin-left: 40px;
+	width: 40%;
+	float: left;
+}
+#signin {
 	width: 300px;
 	margin-left: 33%;
 	margin-top: 100px;
 	margin-bottom: 100px;
-
 }
 
-#signin label {
+#signin label, #signup label {
 	font-size: 12px;
 }
 
-#signin h3 {
+#signin h3, #signup h3 {
 	text-align: center;
 }
 
 #ckbx { margin: 5px;}
 
-#signin .login_input {
+#signin .login_input, #signup .login_input  {
 	height: 26px;
 	background-color: #FAFAFA;
 	width: 98%;
@@ -63,16 +75,47 @@ header a {
 	border: 1px solid #E6E6E6;
 }
 
-#signin .submitBtn {
+.form_row {
+	width: 48%;
+	float: left;
+	margin-right: 8px;
+}
+
+#signin .submitBtn, #signup .submitBtn {
 	background-color: #293542;
 	border: none;
 	padding: 10px;
 	color: #fff;
 	font-size: 14px;
+}
+
+#signin .submitBtn {
 	margin-left: 220px;
 	margin-bottom: 10px;
 }
 
+#signup .submitBtn {
+	margin-left: 80%;
+	margin-top: 10px;
+}
+
+#cta {
+	float: left;
+	width: 48%;
+	margin-left: 30px;
+}
+
+#cta h2 {
+	text-align: center;
+}
+
+#cta a {
+	float: right;
+	text-decoration: none;
+	color: #293542;
+	font-weight: bold;
+	margin-right: 20px;
+}
 /* FOOTER **********************************************/
 footer {
 	background-color: #293542;
