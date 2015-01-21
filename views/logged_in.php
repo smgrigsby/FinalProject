@@ -23,11 +23,49 @@
 
 			<div id='dashboard'>
 				<section class='dash_panel'>
-						<!-- USERNAME placeholder text -->
 					<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
 					<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
-						<!-- Content, TBA during Beta -->
+						
 					<h4>This feature is in development</h4>
+					
+
+<div>
+	<h3>RECENT COMMENTS</h3>
+	php... echo
+</div>
+
+<div id="newpost">
+	<form action="savepost.php" method="POST">
+		<input type="text" value="TELL A STORY...">
+		<input class="submitBtn" type="submit"  name="save" value="Save" />
+	</form>
+
+	<form action="savepost.php" method="POST">
+		<input type="text" value="ADD A TITLE">
+		<input type="text" value="SAY A LITTLE SOMETHING...">
+		UPLOAD A PHOTO
+		<input class="submitBtn" type="submit"  name="save" value="Save" />
+	</form>
+
+	<form action="savepost.php" method="POST">
+		<input type="text" value="ADD A TITLE">
+		<input type="text" value="SAY A LITTLE SOMETHING...">
+		ADD PHOTOS
+		<input class="submitBtn" type="submit"  name="save" value="Save" />
+	</form>
+</div>
+
+<div>
+	<h3>RECENT POSTS</h3>
+	php... echo
+	<a href='#'>VIEW POSTS>></a>
+</div>
+
+<div>
+	<h3>SAVED DRAFTS </h3>
+	php... echo
+	<a href='#'>VIEW DRAFTS>></a>
+</div>
 				</section>
 			</div>
 			<!-- END Dashboard Panel -->
