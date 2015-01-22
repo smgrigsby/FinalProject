@@ -7,31 +7,35 @@
 	</head>
 	
 	<body>
-		<header id="mem_dash">
+		<header class="mem_dash">
 			<h1>BabyGrigsby</h1>
 		</header>
 
 	<div id="tab_nav">
-		<ul>
-			<li><img src="assets/icon_dash.png" height="75px" width="75x"/><br />
-				<a href='#dashboard'>Dashboard</a></li> <!-- links to Dashboard Panel -->
-			<li><img src="assets/icon_sett.png" height="75px" width="75x"/><br />
-				<a href='#settings'>Settings</a></li> <!-- links to Settings Panel -->
-			<li><img src="assets/icon_invi.png" height="75px" width="75x"/><br />
-				<a href='#invites'>Invites</a></li> <!-- links to Invites Panel -->
-			<li><img src="assets/icon_page.png" height="75px" width="75x"/><br />
-				<a href='#pages'>Custom Pages</a></li> <!-- links to Custom Pages Panel -->
-		</ul>
+		<div id="sidebar">
+			<ul>
+				<li><img src="assets/icon_dash.png" height="75px" width="75x"/><br />
+					<a href='#dashboard'>Dashboard</a></li> <!-- links to Dashboard Panel -->
+				<li><img src="assets/icon_sett.png" height="75px" width="75x"/><br />
+					<a href='#settings'>Settings</a></li> <!-- links to Settings Panel -->
+				<li><img src="assets/icon_invi.png" height="75px" width="75x"/><br />
+					<a href='#invites'>Invites</a></li> <!-- links to Invites Panel -->
+				<li id="last"><img src="assets/icon_page.png" height="75px" width="75x"/><br />
+					<a href='#pages'>Custom Pages</a></li> <!-- links to Custom Pages Panel -->
+			</ul>
+		</div>
+	<div class="user_greeting">
+		<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
+		<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
+	</div>				
 
+	<div id="content_container"
 <!-- BEGIN Dashboard Panel -->
 		<div id='dashboard'>
 			<section class='dash_panel'>
-				<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
-				<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
-						
+				
 				<h4>This feature is in development</h4>
-					
-
+				
 				<div>
 					<h3>RECENT COMMENTS</h3>
 					php... echo
@@ -75,8 +79,7 @@
 <!-- BEGIN Settings Panel -->
 		<div id='settings'>
 			<section class='dash_panel'>
-				<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
-				<a href='index.php?logout'>Logout</a>
+				
 
 				<h2>Settings</h2>
 				<div class='sec_nav'>
@@ -91,23 +94,26 @@
 				<div id='account'>
 					<form action='update_user.php' method='POST'>
 						<div class='content_box'>
-							First Name: <input type="text" name="fname" <?php echo 'value="'.$_SESSION['f_name'] .'">' ?><br />
-							Last Name: <input type="text" name="lname" <?php echo 'value="'.$_SESSION['l_name'] .'">' ?><br />
-							Email Address: <input type="text" name="email" <?php echo 'value="'.$_SESSION['user_email'] .'">' ?><br />
+							First Name: <input type="text" class="setting_input" name="fname" <?php echo 'value="'.$_SESSION['f_name'] .'">' ?><br />
+							Last Name: <input type="text" class="setting_input" name="lname" <?php echo 'value="'.$_SESSION['l_name'] .'">' ?><br />
+							Email Address: <input type="text" class="setting_input" name="email" <?php echo 'value="'.$_SESSION['user_email'] .'">' ?><br />
 							<a href='#'> + Add Spouse </a> <!--JS: Creates Additional Input Fields -->
 						</div>
 
 						<div class='content_box'>
-							Change Background: <br>
-								<input type='radio' name='color' value='4BC0B3'> Teal <br>
-								<input type='radio' name='color' value='F1676C'> Coral <br>
-								<input type='radio' name='color' value='A8D058'> Green <br>
-								<input type='radio' name='color' value='7D73B5'> Purple <br>
-								<input type='radio' name='color' value='5EC6F1'> Blue <br>
+							
+							<ul>
+								<li>Change Background: </li>
+								<li><input type='radio' name='color' value='4BC0B3'> Teal </li>
+								<li><input type='radio' name='color' value='F1676C'> Coral </li>
+								<li><input type='radio' name='color' value='A8D058'> Green </li>
+								<li><input type='radio' name='color' value='7D73B5'> Purple </li>
+								<li><input type='radio' name='color' value='5EC6F1'> Blue </li>
+							</ul>
 						</div>
 
 						<?php echo'<input type="hidden" name="user" value="'. $_SESSION['user_name'] .'">'?> 
-						<input type="submit" value="Save Changes">
+						<input class="submitBtn" type="submit" value="Save Changes">
 					</form>
 					</div>
 		<!-- BEGIN Passwords Tab -->
@@ -115,16 +121,16 @@
 					<form>
 						<div class='content_box'>
 							Current Password <br>
-								<input type="password" name="password"> <br>
+								<input type="password" class="setting_input" name="password"> <br>
 							New Password <br>
-								<input type="password" name="newpass"> <br>
+								<input type="password" class="setting_input" name="newpass"> <br>
 							Password Strength <!-- Strength Indicator --> <br>
 							Confirm New Password <br>
-								<input type="text" name="confnewpass"> <br>
+								<input type="text"  class="setting_input" name="confnewpass"> <br>
 							<!-- Error Message -->
 						</div>
 								
-						<input type="submit" value="Save Changes">
+						<input class="submitBtn" type="submit" value="Save Changes">
 					</form>
 				</div>
 		<!-- BEGIN Payments Tab-->
@@ -133,29 +139,29 @@
 					<form>
 						<div class='content_box'>
 							Name (As shown on card) <br>							
-								<input type="text" name="nameoncard" disabled> <br>
+								<input type="text"class="setting_input"  name="nameoncard" disabled> <br>
 							Security Code <br>
-								<input type="text" name="security" disabled> <br>
+								<input type="text" class="setting_input" name="security" disabled> <br>
 							Credit Card Number <br>
-								<input type="text" name="cardnum" disabled> <br>
+								<input type="text" class="setting_input" name="cardnum" disabled> <br>
 							Expiration Date (MM/YY) <br>
-								<input type="text" name="exp" disabled> <br>
+								<input type="text" class="setting_input" name="exp" disabled> <br>
 						</div>
 								
 						<div class='content_box'>
 							Billing Address <br>
-								<input type="text" name="billaddress" disabled> <br>
+								<input type="text" class="setting_input" name="billaddress" disabled> <br>
 							Apt # <br>
-								<input type="text" name="billapt" disabled> <br>
+								<input type="text" class="setting_input" name="billapt" disabled> <br>
 							City <br>
-								<input type="text" name="billcity" disabled> <br>
+								<input type="text" class="setting_input" name="billcity" disabled> <br>
 							State <br>
-								<input type="text" name="billstate" disabled> <br>
+								<input type="text" class="setting_input" name="billstate" disabled> <br>
 							Zip Code <br>
-								<input type="text" name="billzip" disabled> <br>
+								<input type="text" class="setting_input" name="billzip" disabled> <br>
 						</div>
 						
-						<input type="submit" value="Save Changes">
+						<input class="submitBtn" type="submit" value="Save Changes">
 					</form>
 				</div>
 		<!-- BEGIN Membership Plan Tab-->
@@ -165,7 +171,7 @@
 							<input type='radio' name='planopt' value='basic' checked> Basic Plan <br>
 							<input type='radio' name='planopt' value='silver'> Silver Plan <br>
 							<input type='radio' name='planopt' value='gold'> Gold Plan <br>
-							<input type="submit" value="Save Changes">
+							<input type="submit" class="submitBtn" value="Save Changes">
 						</form>
 					</div>
 			</section>
@@ -174,8 +180,6 @@
 <!-- BEGIN Invites Panel -->
 		<div id='invites'>
 			<section class='dash_panel'>
-				<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
-				<a href='index.php?logout'>Logout</a>
 
 				<h2>Manage Invites</h2>
 				<div class='sec_nav'>
@@ -250,23 +254,30 @@
 <!-- BEGIN Custom Pages Panel -->
 		<div id='pages'>
 			<section class='dash_panel'>
-				<h3> Welcome <?php echo $_SESSION['user_name']; ?> </h3>
-				<a href='index.php?logout'>Logout</a>
+
 						<!-- Content, TBA during Beta -->
 				<h4>This feature is in development</h4>
+				<div class='sec_nav'>
+					<ul>
+						<li><a href='#activepage'>Active Pages</a></li> <!-- links to Active Accounts Tab -->
+						<li><a href='#inactivepage'>Inactive Pages</a></li> <!-- links to Send Invite Tab -->
+						<li><a href='#createpage'>Create a New Page</a></li> <!-- links to Messages Tab -->
+					</ul>
+				</div>
 			</section>
 		</div>	
 	</div>
+	</div>
 
-	<footer>
+	<footer class="mem_dash">
 		<p> copyright 2014 BabyGrigsby </p>
 	</footer>
-
 <!-- END HTML, BEGIN LINKS AND FORMATTING -->
     	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     	
     	<link href="css/main.css" rel="stylesheet">
+    	<?php echo '<style> #content_container, .user_greeting { background-color: #'.$_SESSION['bgcolor'].'; }</style>'?>
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -274,10 +285,9 @@
 		<script>
 			$(function() {
 				$("#tab_nav").tabs();
-				// $("#dashboard").tabs();
 				$("#settings").tabs();
 				$("#invites").tabs();
-				// $("#pages").tabs();
+				$("#pages").tabs();
 			
 			});
 		</script>

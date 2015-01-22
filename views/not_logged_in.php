@@ -18,10 +18,10 @@ if (isset($login)) {
     
     <body>
         <header>
-             <a href='register.php'>Not a Member? Sign Up!</a><br />
-            <h1>BabyGrigsby</h1>
-           
+            <a href='register.php'>Not a Member? Sign Up!</a>
+            <h1>BabyGrigsby</h1> 
         </header>
+        
 <!-- login form box -->
 <div id='signin'>
 <form method="post" action="index.php" name="loginform">
