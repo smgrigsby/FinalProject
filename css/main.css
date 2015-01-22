@@ -201,7 +201,6 @@ footer p {
 
 
 
-
 /* DASHBOARD LAYOUT **********************************************/
 
 #sidebar {
@@ -238,7 +237,7 @@ ul {
 }
 
 #content_container {
-	height: 587px;
+	height: 600px;
 	overflow: scroll;
 	background-color: #4BC0B3;
 	padding-left: 30px;
@@ -251,7 +250,7 @@ ul {
 	padding-bottom: 10px;
 }
 
-.sec_nav li{
+.sec_nav li, #post_container li{
 	display: inline;
 	list-style: none;
 	padding-right: 50px;
@@ -269,7 +268,37 @@ ul {
 	border-bottom: 5px solid #293542;
 }
 
+#post_container, #comments_feed, #recentpost_feed, #saveddrafts_feed{
+	background-color: #fff;
+}
 
+#post_container {
+	width: 60%;
+	padding: 20px;
+	float: left;
+	margin-bottom: 20px;
+	/*margin-top: -50px;*/
+}
+
+#post_container ul{ 
+margin-top: 20px;
+}
+#post_container li{
+padding-right: 20px;
+	}
+#comments_feed{
+	float: right;
+	width: 30%;
+	height: 400px;
+	margin-right: 30px;
+}
+#recentpost_feed, #saveddrafts_feed {
+	float: left;
+	width: 31%;
+}
+#recentpost_feed{
+	margin-right: 20px;
+}
 
 .ui-tooltip{padding:8px;
 	position:absolute;

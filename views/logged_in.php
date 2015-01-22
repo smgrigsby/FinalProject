@@ -21,7 +21,7 @@
 				<li><img src="assets/icon_invi.png" height="75px" width="75x"/><br />
 					<a href='#invites'>Invites</a></li> <!-- links to Invites Panel -->
 				<li id="last"><img src="assets/icon_page.png" height="75px" width="75x"/><br />
-					<a href='#pages'>Custom Pages</a></li> <!-- links to Custom Pages Panel -->
+					<a href='#pages'>Custom<br /> Pages</a></li> <!-- links to Custom Pages Panel -->
 			</ul>
 		</div>
 	<div class="user_greeting">
@@ -29,58 +29,62 @@
 		<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
 	</div>				
 
-	<div id="content_container"
+	<div id="content_container">
 <!-- BEGIN Dashboard Panel -->
-		<div id='dashboard'>
-			<section class='dash_panel'>
+<div id='dashboard'>
 				
-				<h4>This feature is in development</h4>
-				
-				<div>
-					<h3>RECENT COMMENTS</h3>
-					php... echo
+			<section id='post_container'>
+				<div id="photopost">
+					<form action="savepost.php" method="POST">
+							<input type="text" value="ADD A TITLE">
+							<input type="text" value="SAY A LITTLE SOMETHING...">
+							UPLOAD A PHOTO
+							<input class="submitBtn" type="submit"  name="save" value="Save" />
+						</form>
 				</div>
-
-				<div id="newpost">
+				<div id="albumpost">
+					<form action="savepost.php" method="POST">
+							<input type="text" value="ADD A TITLE">
+							<input type="text" value="SAY A LITTLE SOMETHING...">
+							ADD PHOTOS
+							<input class="submitBtn" type="submit"  name="save" value="Save" />
+						</form>
+				</div>
+				<div id="storypost">
 					<form action="savepost.php" method="POST">
 						<input type="text" value="TELL A STORY...">
 						<input class="submitBtn" type="submit"  name="save" value="Save" />
 					</form>
-
-					<form action="savepost.php" method="POST">
-						<input type="text" value="ADD A TITLE">
-						<input type="text" value="SAY A LITTLE SOMETHING...">
-						UPLOAD A PHOTO
-						<input class="submitBtn" type="submit"  name="save" value="Save" />
-					</form>
-
-					<form action="savepost.php" method="POST">
-						<input type="text" value="ADD A TITLE">
-						<input type="text" value="SAY A LITTLE SOMETHING...">
-						ADD PHOTOS
-						<input class="submitBtn" type="submit"  name="save" value="Save" />
-					</form>
 				</div>
 
-				<div>
-					<h3>RECENT POSTS</h3>
-					php... echo
-					<a href='#'>VIEW POSTS>></a>
-				</div>
-
-				<div>
-					<h3>SAVED DRAFTS </h3>
-					php... echo
-					<a href='#'>VIEW DRAFTS>></a>
-				</div>
+				
+					<ul>
+						<li><a href='#photopost'><img src="assets/icon_phot.png" height="50px" width="50px"/></a></li> <!-- links to Active Accounts Tab -->
+						<li><a href='#albumpost'><img src="assets/icon_albu.png" height="50px" width="50px"/></a></li> <!-- links to Send Invite Tab -->
+						<li><a href='#storypost'><img src="assets/icon_post.png" height="50px" width="50px"/></a></li> <!-- links to Messages Tab -->
+					</ul>
+				
 			</section>
-		</div>
+
+			<div id='comments_feed'>
+				<h3>Recent Comments</h3>
+				php...
+			</div>
+
+			<div id='recentpost_feed'>
+				<h3>Recent Comments</h3>
+				php...
+			</div>
+
+			<div id='saveddrafts_feed'>
+				<h3>Recent Comments</h3>
+				php...
+			</div>
+		</div>	
 
 <!-- BEGIN Settings Panel -->
 		<div id='settings'>
-			<section class='dash_panel'>
-				
-
+			
 				<h2>Settings</h2>
 				<div class='sec_nav'>
 					<ul>
@@ -174,12 +178,12 @@
 							<input type="submit" class="submitBtn" value="Save Changes">
 						</form>
 					</div>
-			</section>
+			
 		</div>
 
 <!-- BEGIN Invites Panel -->
 		<div id='invites'>
-			<section class='dash_panel'>
+			
 
 				<h2>Manage Invites</h2>
 				<div class='sec_nav'>
@@ -248,14 +252,12 @@
 						<h4>Messages</h4>
 							<p>You have messages at this time </p>
 					</div>
-			</section>
+			
 		</div>
 
 <!-- BEGIN Custom Pages Panel -->
 		<div id='pages'>
-			<section class='dash_panel'>
-
-						<!-- Content, TBA during Beta -->
+			<!-- Content, TBA during Beta -->
 				<h4>This feature is in development</h4>
 				<div class='sec_nav'>
 					<ul>
@@ -264,7 +266,6 @@
 						<li><a href='#createpage'>Create a New Page</a></li> <!-- links to Messages Tab -->
 					</ul>
 				</div>
-			</section>
 		</div>	
 	</div>
 	</div>
@@ -285,6 +286,7 @@
 		<script>
 			$(function() {
 				$("#tab_nav").tabs();
+				$("#dashboard").tabs();
 				$("#settings").tabs();
 				$("#invites").tabs();
 				$("#pages").tabs();
