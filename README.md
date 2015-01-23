@@ -46,19 +46,20 @@ Alpha Stage
 
 Beta Stage
 ------
-> IN PROGRESS (Status: Behind Schedule)
-* Set up Posts Database
-  * Connect to Member Account Dashboard
-* QA Testing: Add, Edit, Delete Posts
-
-* Display Posts from Database
-  * Set up Permissions linked to Viewer Account Users 
-  * CSS > format by post type
-* QA Testing: Add Post using Permissions, View from Different User Accounts
 * Finalized HTML & CSS
   * All content and assets present
   * All forms & navigation functional
   * Responsive CSS
+ 
+> IN PROGRESS (Status: Behind Schedule)
+* Set up Posts Database
+  * Connect to Member Account Dashboard
+* QA Testing: Add, Edit, Delete Posts
+* Display Posts from Database
+  * Set up Permissions linked to Viewer Account Users 
+  * CSS > format by post type
+* QA Testing: Add Post using Permissions, View from Different User Accounts
+
 
 
 Site Launch
