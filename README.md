@@ -38,17 +38,20 @@ Alpha Stage
   * Connect to Sign Up Form 
   * Connect to Log In Form
  * QA Testing: Sign Up/Sign In Process
- 
-> IN PROGRESS (Status: Behind Schedule)
   * Set Up Viewer Account User Database
    * Dashboard Invite Manager
-   * Generate Email with Invite Form Link
- 
+   * Generate Email with Invite Form Link 
  * QA Testing: Send Invites, Sign Up, Log In, Delete
 
 
 Beta Stage
 ------
+* Finalized HTML & CSS
+  * All content and assets present
+  * All forms & navigation functional
+  * Responsive CSS
+ 
+> IN PROGRESS (Status: Behind Schedule)
 * Set up Posts Database
   * Connect to Member Account Dashboard
 * QA Testing: Add, Edit, Delete Posts
@@ -56,10 +59,7 @@ Beta Stage
   * Set up Permissions linked to Viewer Account Users 
   * CSS > format by post type
 * QA Testing: Add Post using Permissions, View from Different User Accounts
-* Finalized HTML & CSS
-  * All content and assets present
-  * All forms & navigation functional
-  * Responsive CSS
+
 
 
 Site Launch
