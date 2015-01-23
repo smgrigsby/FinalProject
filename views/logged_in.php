@@ -36,23 +36,23 @@
 			<section id='post_container'>
 				<div id="photopost">
 					<form action="savepost.php" method="POST">
-							<input type="text" value="ADD A TITLE">
-							<input type="text" value="SAY A LITTLE SOMETHING...">
+							<input class= "input_title" type="text" value="ADD A TITLE">
+							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							UPLOAD A PHOTO
 							<input class="submitBtn" type="submit"  name="save" value="Save" />
 						</form>
 				</div>
 				<div id="albumpost">
 					<form action="savepost.php" method="POST">
-							<input type="text" value="ADD A TITLE">
-							<input type="text" value="SAY A LITTLE SOMETHING...">
+							<input class= "input_title" type="text" value="ADD A TITLE">
+							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							ADD PHOTOS
 							<input class="submitBtn" type="submit"  name="save" value="Save" />
 						</form>
 				</div>
 				<div id="storypost">
 					<form action="savepost.php" method="POST">
-						<input type="text" value="TELL A STORY...">
+						<input class= "input_body" type="text" value="TELL A STORY...">
 						<input class="submitBtn" type="submit"  name="save" value="Save" />
 					</form>
 				</div>
@@ -66,19 +66,19 @@
 				
 			</section>
 
-			<div id='comments_feed'>
+			<div class="feed" id='comments_feed'>
 				<h3>Recent Comments</h3>
-				php...
+				<p>Content Not Available...</p>
 			</div>
 
-			<div id='recentpost_feed'>
+			<div class="feed" id='recentpost_feed'>
 				<h3>Recent Comments</h3>
-				php...
+				<p>Content Not Available...</p>
 			</div>
 
-			<div id='saveddrafts_feed'>
+			<div class="feed" id='saveddrafts_feed'>
 				<h3>Recent Comments</h3>
-				php...
+				<p>Content Not Available...</p>
 			</div>
 		</div>	
 
@@ -223,26 +223,28 @@
 				</div>
 		<!-- BEGIN Send Invites Tab -->
 				<div id='newinvite'>
-					<p>Copy the following and paste into an email:</p> 
-					<p>Hi, I wanted to invite you to set up an account with BabyGrigsby so I can share stories and photos
-						of the kids with you. Just paste this link into your browser to sign up!</p>
-					<p>
-					<?php echo 'http://localhost:8889/FinalProject/create_account.php?id="'.$_SESSION['blog_id'].'"' ?></p>
-			
+					<div class="content_box">
+						
+						<p>Copy the following and paste into an email:</p> 
+						<p>Hi, I wanted to invite you to set up an account with BabyGrigsby so I can share stories and photos
+							of the kids with you. Just paste this link into your browser to sign up!</p>
+						<p>
+						<?php echo 'http://localhost:8889/FinalProject/create_account.php?id="'.$_SESSION['blog_id'].'"' ?></p>
+				
 					<h4>This feature is in development</h4>
 						
 						<form>
 							Name <br>
-								<input type="text" name="sendto"> <br>
+								<input type="text" class="invite_input" name="sendto"> <br>
 							Email Address <br>
-								<input type="text" name="sendemail"> <br>
+								<input type="text" class="invite_input" name="sendemail"> <br>
 							Personal Message <br>
-								<input type="text" name="sendmessage"> <br>
+								<input type="text" class="invite_input" name="sendmessage"> <br>
 								<!--Styling: Divider Bar -->
 								<!--Error Message-->
-							<input type="submit" value="Send Message">
+							<input class="submitBtn" type="submit" value="Send Message">
 						</form>
-
+					</div>
 					<h4>Pending Invites</h4>
 						<p>You have no pending invites at this time </p>
 				</div>
@@ -266,6 +268,69 @@
 						<li><a href='#createpage'>Create a New Page</a></li> <!-- links to Messages Tab -->
 					</ul>
 				</div>
+					<div id='activepage'>
+					<table>
+						<tr>
+							<td>Page Name 1</td>
+							<td>Username</td>
+							<td>Nickname</td>
+							<td>City, State</td>
+						</tr>
+							<?php 
+								$user="root"; $pass="root";
+								$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
+								$stmt=$dbh->prepare("SELECT * FROM users WHERE user_type = '2' && blog_id = :b_id");
+								$stmt->bindValue(':b_id', $_SESSION['blog_id'],  PDO::PARAM_INT);
+								$stmt->execute();
+								$result=$stmt->fetchall(PDO::FETCH_ASSOC);
+								foreach($result as $row){ echo 
+						'<tr>
+							<td><img src="assets/default_profile_pic.jpg" alt="'.$row['user_name'].'" 
+								width="50" height="50"/></td>
+							<td>'.$row['user_name'].'</td>
+							<td>N/A</td>
+							<td>'.$row['address'].'</td>
+							<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
+						</tr>'; }
+							?>
+					</table>
+				</div>
+					<div id='inactivepage'>
+					<table>
+						<tr>
+							<td>Page Name 2</td>
+							<td>Username</td>
+							<td>Nickname</td>
+							<td>City, State</td>
+						</tr>
+							<?php 
+								$user="root"; $pass="root";
+								$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
+								$stmt=$dbh->prepare("SELECT * FROM users WHERE user_type = '2' && blog_id = :b_id");
+								$stmt->bindValue(':b_id', $_SESSION['blog_id'],  PDO::PARAM_INT);
+								$stmt->execute();
+								$result=$stmt->fetchall(PDO::FETCH_ASSOC);
+								foreach($result as $row){ echo 
+						'<tr>
+							<td><img src="assets/default_profile_pic.jpg" alt="'.$row['user_name'].'" 
+								width="50" height="50"/></td>
+							<td>'.$row['user_name'].'</td>
+							<td>N/A</td>
+							<td>'.$row['address'].'</td>
+							<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
+						</tr>'; }
+							?>
+					</table>
+				</div>
+
+				<div id='createpage'>
+					<form action="savepost.php" method="POST">
+							<input class= "input_title" type="text" value="ADD A TITLE">
+							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
+							UPLOAD A PHOTO
+							<input class="submitBtn" type="submit"  name="save" value="Save" />
+						</form>
+				</div>
 		</div>	
 	</div>
 	</div>
@@ -278,7 +343,8 @@
     	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     	
     	<link href="css/main.css" rel="stylesheet">
-    	<?php echo '<style> #content_container, .user_greeting { background-color: #'.$_SESSION['bgcolor'].'; }</style>'?>
+    	<?php echo '<style> #content_container, .user_greeting { background-color: #'.$_SESSION['bgcolor'].'; }
+    	.feed h3{ color: #'.$_SESSION['bgcolor'].'; }#dashboard .submitBtn{ background-color: #'.$_SESSION['bgcolor'].'; }</style>'?>
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>

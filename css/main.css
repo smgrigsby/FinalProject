@@ -85,7 +85,8 @@ header a {
 
 #ckbx { margin: 5px;}
 
-#signin .login_input, #signup .login_input, .content_box .setting_input  {
+#signin .login_input, #signup .login_input, .content_box .setting_input,
+.input_title, .input_body, .invite_input  {
 	height: 26px;
 	background-color: #FAFAFA;
 	width: 98%;
@@ -99,7 +100,8 @@ header a {
 	margin-right: 8px;
 }
 
-#signin .submitBtn, #signup .submitBtn, #settings .submitBtn {
+#signin .submitBtn, #signup .submitBtn, #settings .submitBtn, 
+#dashboard .submitBtn, #invites .submitBtn {
 	background-color: #293542;
 	border: none;
 	padding: 10px;
@@ -116,11 +118,13 @@ header a {
 	margin-left: 80%;
 	margin-top: 10px;
 }
-#settings .submitBtn {
+#settings .submitBtn{
 	float: right;
 	margin-right: 4%;
 }
-
+#dashboard .submitBtn  {
+	float:right;
+}
 #cta {
 	float: left;
 	width: 48%;
@@ -159,6 +163,12 @@ header a {
 	display: inline;
 	padding-right: 20px;
 	text-transform: uppercase;
+}
+
+table {
+	background-color: #fff;
+	padding: 20px;
+	width: 96%;
 }
 
 /*#signin .login_input, #signup .login_input,   {
@@ -298,6 +308,14 @@ padding-right: 20px;
 }
 #recentpost_feed{
 	margin-right: 20px;
+}
+
+.feed h3, .feed p{
+ margin-left: 20px;
+}
+
+.feed h3 {
+	text-transform: uppercase;
 }
 
 .ui-tooltip{padding:8px;
