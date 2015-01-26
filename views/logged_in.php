@@ -35,11 +35,12 @@
 				
 			<section id='post_container'>
 				<div id="photopost">
-					<form action="savepost.php" method="POST">
-							<input class= "input_title" type="text" value="ADD A TITLE">
-							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
-							UPLOAD A PHOTO
-							<input class="submitBtn" type="submit"  name="save" value="Save" />
+						<form action="newpost.php" method="POST">
+							<input id="ptype" type="hidden" value="1">
+							<input id="ptitle" class= "input_title" type="text" value="ADD A TITLE">
+							<input id="pbody" class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
+							
+							<input class="submitBtn" type="submit"  name="save" value="SAVE" />
 						</form>
 				</div>
 				<div id="albumpost">
@@ -72,12 +73,12 @@
 			</div>
 
 			<div class="feed" id='recentpost_feed'>
-				<h3>Recent Comments</h3>
+				<h3>Recent Posts</h3>
 				<p>Content Not Available...</p>
 			</div>
 
 			<div class="feed" id='saveddrafts_feed'>
-				<h3>Recent Comments</h3>
+				<h3>Saved Drafts</h3>
 				<p>Content Not Available...</p>
 			</div>
 		</div>	
@@ -324,7 +325,18 @@
 				</div>
 
 				<div id='createpage'>
-					<form action="savepost.php" method="POST">
+					
+						 <div id="toolbar">
+  							<button class="ql-bold">Bold</button>
+  							<button class="ql-italic">Italic</button>
+						</div>
+<form action="savepost.php" method="POST">
+						<div id="editor">
+  <div>Hello World!</div>
+  <div>Some initial <b>bold</b> text</div>
+  <div><br></div>
+</div>
+
 							<input class= "input_title" type="text" value="ADD A TITLE">
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							UPLOAD A PHOTO
@@ -341,6 +353,7 @@
 <!-- END HTML, BEGIN LINKS AND FORMATTING -->
     	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    	<script src="//cdn.quilljs.com/0.19.8/quill.js"></script>
     	
     	<link href="css/main.css" rel="stylesheet">
     	<?php echo '<style> #content_container, .user_greeting { background-color: #'.$_SESSION['bgcolor'].'; }
@@ -358,6 +371,9 @@
 				$("#pages").tabs();
 			
 			});
+
+			var quill = new Quill('#editor');
+  quill.addModule('toolbar', { container: '#toolbar' });
 		</script>
 
 	</body>
