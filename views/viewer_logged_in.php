@@ -19,10 +19,10 @@
 				<h1>BabyGrigsby</h1>
 			</header>
 
-		<!-- Default Tab, Empty Placeholder -->	
+			<!-- Default Tab, Empty Placeholder -->	
 			<div id="defaultview"></div>
 
-		<!-- Pages Tab -->	
+			<!-- Pages Tab -->	
 			<div id="custpage_menu" class="menu_view">
 
 				<?php echo 
@@ -34,7 +34,7 @@
 					</ul>' 
 				?>
 			</div>
-		<!-- Archives Tab -->	
+			<!-- Archives Tab -->	
 			<div id="archive_menu" class="menu_view">
 				<h3> Recent Posts </h3>
 				<h3> Recent Comments </h3>
@@ -42,22 +42,28 @@
 
 
 			</div>
-		<!-- Search Tab -->	
+			<!-- Search Tab -->	
 			<div id="search_menu" class="menu_view">
 				<form action="search.php" method="POST">
 					<input class= "input_search" type="text">
 					<input class="submitBtn" type="submit" value="Search" />
 				</form>
 			</div>
-		<!-- Settings Tab -->	
+			<!-- Settings Tab -->	
 			<div id="settings_menu" class="menu_view">
-
+				<h3> Basic Info </h3>
+				<p> FIRST NAME: KARA LAST NAME: RICHARDSON</p>
+				<p> DISPLAY AS: AUNT KARA</p>
+				<p>CITY: BOTHELL STATE: WASHINGTON</p>
+				<p>EMAIL: KJRICHARDSON@GMAIL.COM</p>
+				<p>CHANGE PASSWORD</p>
 
 			</div>
-			<div class="user_greeting">
+		<div class="user_greeting">
 				<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
 				<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
 			</div>
+		<?php include("views/display_posts.php"); ?>
 		</div>
 
 		<footer>
