@@ -18,7 +18,7 @@ if (isset($login)) {
     
     <body>
         <header>
-            <a href='register.php'>Not a Member? Sign Up!</a>
+            <div class="linkto"><a href='register.php'>Not a Member? Sign Up!</a></div>
             <h1>BabyGrigsby</h1> 
         </header>
         
