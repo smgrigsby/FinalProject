@@ -330,7 +330,7 @@
   							<button class="ql-bold">Bold</button>
   							<button class="ql-italic">Italic</button>
 						</div>
-<form action="savepost.php" method="POST">
+
 						<div id="editor">
   <div>Hello World!</div>
   <div>Some initial <b>bold</b> text</div>
@@ -373,7 +373,7 @@
 			});
 
 			var quill = new Quill('#editor');
-  quill.addModule('toolbar', { container: '#toolbar' });
+  				quill.addModule('toolbar', { container: '#toolbar' });
 		</script>
 
 	</body>
