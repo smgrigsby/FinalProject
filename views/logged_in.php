@@ -1,5 +1,5 @@
 
-<!-- if you need user information, just put them into the $_SESSION variable and output them here -->
+      <!-- if you need user information, just put them into the $_SESSION variable and output them here -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,16 +35,20 @@
 				
 			<section id='post_container'>
 				<div id="photopost">
+		
+
+        <!-- <textarea  rows="5" cols="65"></textarea>
+        <button id="saveInput">SAVE</button>  -->
 						<form action="newpost.php" method="POST">
-							<input id="ptype" type="hidden" value="1">
-							<input id="ptitle" class= "input_title" type="text" value="ADD A TITLE">
-							<input id="pbody" class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
+							<input id="post_type" type="hidden" value="1">
+							<input id="post_title" class= "input_title" type="text" value="ADD A TITLE">
+							<input id="post_body" class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							
 							<input class="submitBtn" type="submit"  name="save" value="SAVE" />
 						</form>
 				</div>
 				<div id="albumpost">
-					<form enctype="multipart/form-data" action="savepost.php" method="POST">
+					<form enctype="multipart/form-data" action="newpost.php" method="POST">
 							<input class= "input_title" type="text" value="ADD A TITLE">
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							<input name="userfile" type="file" /><br />
@@ -53,7 +57,7 @@
 						</form>
 				</div>
 				<div id="storypost">
-					<form action="savepost.php" method="POST">
+					<form action="newpost.php" method="POST">
 						<input class= "input_body" type="text" value="TELL A STORY...">
 						<input class="submitBtn" type="submit"  name="save" value="Save" />
 					</form>
@@ -372,6 +376,8 @@
 
 			var quill = new Quill('#editor');
   				quill.addModule('toolbar', { container: '#toolbar' });
+
+
 		</script>
 
 	</body>
