@@ -44,10 +44,11 @@
 						</form>
 				</div>
 				<div id="albumpost">
-					<form action="savepost.php" method="POST">
+					<form enctype="multipart/form-data" action="savepost.php" method="POST">
 							<input class= "input_title" type="text" value="ADD A TITLE">
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
-							ADD PHOTOS
+							<input name="userfile" type="file" /><br />
+							<br />
 							<input class="submitBtn" type="submit"  name="save" value="Save" />
 						</form>
 				</div>
@@ -272,26 +273,23 @@
 					<div id='activepage'>
 					<table>
 						<tr>
-							<td>Page Name 1</td>
-							<td>Username</td>
-							<td>Nickname</td>
-							<td>City, State</td>
+							<td><h4>Page Name</h4></td>
+							<td> </td>
+							<td> </td>
+							
 						</tr>
 							<?php 
 								$user="root"; $pass="root";
 								$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
-								$stmt=$dbh->prepare("SELECT * FROM users WHERE user_type = '2' && blog_id = :b_id");
-								$stmt->bindValue(':b_id', $_SESSION['blog_id'],  PDO::PARAM_INT);
+								$stmt=$dbh->prepare("SELECT * FROM posts WHERE post_type = '4' && status = '1'");
+				
 								$stmt->execute();
 								$result=$stmt->fetchall(PDO::FETCH_ASSOC);
 								foreach($result as $row){ echo 
 						'<tr>
-							<td><img src="assets/default_profile_pic.jpg" alt="'.$row['user_name'].'" 
-								width="50" height="50"/></td>
-							<td>'.$row['user_name'].'</td>
-							<td>N/A</td>
-							<td>'.$row['address'].'</td>
-							<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
+							<td>'.$row['post_title'].'</td>
+							<td> <a href="delete_account.php?id='.$row['user_id'].'">Edit</a>
+							<td> <a href="delete_account.php?id='.$row['post_id'].'">Delete</a>
 						</tr>'; }
 							?>
 					</table>
@@ -299,26 +297,23 @@
 					<div id='inactivepage'>
 					<table>
 						<tr>
-							<td>Page Name 2</td>
-							<td>Username</td>
-							<td>Nickname</td>
-							<td>City, State</td>
+							<td><h4>Page Name</h4></td>
+							<td> </td>
+							<td> </td>
+							
 						</tr>
 							<?php 
 								$user="root"; $pass="root";
 								$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
-								$stmt=$dbh->prepare("SELECT * FROM users WHERE user_type = '2' && blog_id = :b_id");
-								$stmt->bindValue(':b_id', $_SESSION['blog_id'],  PDO::PARAM_INT);
+								$stmt=$dbh->prepare("SELECT * FROM posts WHERE post_type = '4' && status = '2'");
+						
 								$stmt->execute();
 								$result=$stmt->fetchall(PDO::FETCH_ASSOC);
 								foreach($result as $row){ echo 
 						'<tr>
-							<td><img src="assets/default_profile_pic.jpg" alt="'.$row['user_name'].'" 
-								width="50" height="50"/></td>
-							<td>'.$row['user_name'].'</td>
-							<td>N/A</td>
-							<td>'.$row['address'].'</td>
-							<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
+							<td>'.$row['post_title'].'</td>
+							<td> <a href="delete_account.php?id='.$row['user_id'].'">Edit</a>
+							<td> <a href="delete_account.php?id='.$row['post_id'].'">Delete</a>
 						</tr>'; }
 							?>
 					</table>
@@ -332,14 +327,16 @@
 						</div>
 
 						<div id="editor">
-  <div>Hello World!</div>
-  <div>Some initial <b>bold</b> text</div>
-  <div><br></div>
-</div>
-
+  							<div>Hello World!</div>
+  							<div>Some initial <b>bold</b> text</div>
+  							<textarea  rows="5" cols="20"></textarea>
+ 						 <div></div>
+						</div>
+							<form>
+							<p>Date: <input type="text" id="datepicker"></p>
 							<input class= "input_title" type="text" value="ADD A TITLE">
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
-							UPLOAD A PHOTO
+						
 							<input class="submitBtn" type="submit"  name="save" value="Save" />
 						</form>
 				</div>
@@ -358,6 +355,7 @@
     	<link href="css/main.css" rel="stylesheet">
     	<?php echo '<style> #content_container, .user_greeting { background-color: #'.$_SESSION['bgcolor'].'; }
     	.feed h3{ color: #'.$_SESSION['bgcolor'].'; }#dashboard .submitBtn{ background-color: #'.$_SESSION['bgcolor'].'; }</style>'?>
+    	
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -369,7 +367,7 @@
 				$("#settings").tabs();
 				$("#invites").tabs();
 				$("#pages").tabs();
-			
+				$( "#datepicker" ).datepicker();
 			});
 
 			var quill = new Quill('#editor');

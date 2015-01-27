@@ -8,5 +8,16 @@
 								foreach($result as $row){ echo 
 	
 		'<h4>'.$row['post_title'].'</h4>
-		<p>'.$row['post_body'].'</p>'; }
-							?>
+		<p>'.$row['post_body'].'</p>
+
+		<div id="comments">
+			<form method="POST" action="newcomment.php">
+				<input id="comment_input" type="text">
+				<input type="submit" value="ENTER" />
+			</form>
+		</div>
+		'; 
+
+
+	}
+?>
