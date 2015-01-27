@@ -24,15 +24,19 @@
 
 			<!-- Pages Tab -->	
 			<div id="custpage_menu" class="menu_view">
+				<ul>
+				<?php 
 
-				<?php echo 
-					'<ul>
-						<li><a href="#">Custom Page 1</a></li>
-						<li><a href="#">Custom Page 2</a></li>
-						<li><a href="#">Custom Page 3</a></li>
-						<li><a href="#">Custom Page 4</a></li>
-					</ul>' 
+					$user="root"; $pass="root";
+					$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
+					$stmt=$dbh->prepare("SELECT * FROM posts WHERE post_type = '4' && status = '1'");
+						
+					$stmt->execute();
+					$result=$stmt->fetchall(PDO::FETCH_ASSOC);
+					foreach($result as $row){ echo 
+						'<li><a href="#">'.$row['post_title'].'</a></li>'; }
 				?>
+				</ul>
 			</div>
 			<!-- Archives Tab -->	
 			<div id="archive_menu" class="menu_view">

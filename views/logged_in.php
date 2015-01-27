@@ -293,7 +293,7 @@
 						'<tr>
 							<td>'.$row['post_title'].'</td>
 							<td> <a href="delete_account.php?id='.$row['user_id'].'">Edit</a>
-							<td> <a href="delete_account.php?id='.$row['post_id'].'">Delete</a>
+							<td> <a href="classes/add_deletePage.php?id='.$row['id'].'">Delete</a>
 						</tr>'; }
 							?>
 					</table>
@@ -316,16 +316,18 @@
 								foreach($result as $row){ echo 
 						'<tr>
 							<td>'.$row['post_title'].'</td>
-							<td> <a href="delete_account.php?id='.$row['user_id'].'">Edit</a>
-							<td> <a href="delete_account.php?id='.$row['post_id'].'">Delete</a>
+							<td> <a href="delete_account.php?id='.$row['id'].'">Edit</a>
+							<td> <a href="classes/add_deletePage.php?id='.$row['id'].'">Delete</a>
 						</tr>'; }
 							?>
 					</table>
 				</div>
 
 				<div id='createpage'>
-					
-						 <div id="toolbar">
+					<form action="classes/add_deletePage.php" method="POST">
+						<input class="submitBtn" type="submit" value="CREATE NEW PAGE" />
+					</form>
+						 <!-- <div id="toolbar">
   							<button class="ql-bold">Bold</button>
   							<button class="ql-italic">Italic</button>
 						</div>
@@ -342,7 +344,7 @@
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 						
 							<input class="submitBtn" type="submit"  name="save" value="Save" />
-						</form>
+						</form> -->
 				</div>
 		</div>	
 	</div>
