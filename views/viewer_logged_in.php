@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Dashboard</title>
+		<title>Welcome <?php echo $_SESSION['user_name']; ?>!</title>
 	</head>
 	
 	<body>
@@ -85,6 +85,8 @@
 				$("#homeview").tabs();
 			
 			});
+
+			
 		</script>
 
 	</body>

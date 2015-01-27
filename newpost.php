@@ -30,3 +30,10 @@
 	die();
 
 	?>
+
+	<html>
+	<p>S: “It’s like I can read your mind!”</p>
+	<p>J: “Now if only I could get you to read your text.”</p>
+
+
+	</html>
