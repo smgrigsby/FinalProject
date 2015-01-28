@@ -1,3 +1,6 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
 
       <!-- if you need user information, just put them into the $_SESSION variable and output them here -->
 <!DOCTYPE html>

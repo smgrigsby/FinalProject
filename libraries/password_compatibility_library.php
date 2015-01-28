@@ -1,3 +1,6 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
 <?php
 /**
  * A Compatibility library with PHP 5.5's simplified password hashing API.

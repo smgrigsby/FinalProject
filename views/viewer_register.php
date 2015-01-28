@@ -1,3 +1,7 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
+
 <?php
 // show potential errors / feedback (from registration object)
 if (isset($registration)) {

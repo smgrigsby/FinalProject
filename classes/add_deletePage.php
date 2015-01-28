@@ -1,3 +1,7 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
+
 <?php 
   		$user="root"; $pass="root";
         $dbh = new PDO("mysql:host=localhost;dbname=login;port=8887", $user, $pass);

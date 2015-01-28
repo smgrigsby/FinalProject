@@ -1,3 +1,7 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
+
 Deployment Plan
 ======
 
@@ -50,8 +54,6 @@ Beta Stage
   * All content and assets present
   * All forms & navigation functional
   * Responsive CSS
- 
-> IN PROGRESS (Status: Behind Schedule)
 * Set up Posts Database
   * Connect to Member Account Dashboard
 * QA Testing: Add, Edit, Delete Posts

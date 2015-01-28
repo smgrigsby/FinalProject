@@ -1,3 +1,7 @@
+<!-- Project: Baby Grigsby
+Author: Sarah Meister Grigsby 
+Date: January 2015 -->
+
 <?php
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $user="root"; $pass="root";
