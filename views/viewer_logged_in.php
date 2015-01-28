@@ -22,9 +22,11 @@
 			<!-- Default Tab, Empty Placeholder -->	
 			<div id="defaultview"></div>
 
-			<!-- Pages Tab -->	
+			<!-- Pages Tab -->
+			
 			<div id="custpage_menu" class="menu_view">
 				<ul>
+		
 				<?php 
 
 					$user="root"; $pass="root";
@@ -34,17 +36,14 @@
 					$stmt->execute();
 					$result=$stmt->fetchall(PDO::FETCH_ASSOC);
 					foreach($result as $row){ echo 
-						'<li><a href="#">'.$row['post_title'].'</a></li>'; }
-				?>
-				</ul>
+						'<li><a href="display_pages.php?id='.$row['id'].'">'.$row['post_title'].'</a></li>'; }
+				?> </ul>
 			</div>
 			<!-- Archives Tab -->	
 			<div id="archive_menu" class="menu_view">
 				<h3> Recent Posts </h3>
 				<h3> Recent Comments </h3>
 				<h3> Archives </h3>
-
-
 			</div>
 			<!-- Search Tab -->	
 			<div id="search_menu" class="menu_view">
@@ -61,14 +60,15 @@
 				<p>CITY: BOTHELL STATE: WASHINGTON</p>
 				<p>EMAIL: KJRICHARDSON@GMAIL.COM</p>
 				<p>CHANGE PASSWORD</p>
-
 			</div>
+		
 		<div class="user_greeting">
 				<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
 				<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
 			</div>
 		<?php include("views/display_posts.php"); ?>
-		</div>
+			
+	</div>	
 
 		<footer>
 			<p> copyright 2014 BabyGrigsby </p>
@@ -89,9 +89,18 @@
 				$("#homeview").tabs();
 			
 			});
-
+			
+		$(document).ready(function(){
+  			$(".commentBtn").click(function(){
+    			$(".comments").toggle();
+  			});
+		});
+		
+			
+		
 			
 		</script>
+
 
 	</body>
 </html>

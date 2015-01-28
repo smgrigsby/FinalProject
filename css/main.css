@@ -88,6 +88,10 @@ header .linkto {
 	color: #fff;
 }
 
+header a:visited {
+	color: #fff;
+}
+
 .errmess {
 	color: #DF7401;
 	text-transform: uppercase;
@@ -332,7 +336,7 @@ padding-right: 20px;
 	text-align: center;
 }
 
-.input_search{
+.input_search, #comment_input{
 	height: 26px;
 	background-color: #FAFAFA;
 	width: 75%;
@@ -362,7 +366,7 @@ padding-right: 20px;
 	border: 1px solid #E6E6E6;
 }
 
-#comments{
+.comments{
 	background-color: #F2F2F2;
 	border: 1px solid #D8D8D8;
 	margin-bottom: 30px;
@@ -371,21 +375,35 @@ padding-right: 20px;
 	margin-left: 31%;
 	width: 58%;
 }
-
+#comment_input{
+	width: 90%;
+}
 .date_dot{
 	float: left;
 	margin-top: 30px;
 	margin-left: 25%;
 }
 
-.showcomments {
+.commentBtn {
 	position: relative;
 	float:right;
 	right: 10px;
 	bottom: 25px;
 }
+.gallery_post ul {
+	float: left;
+}
+.photo_post {
+	margin-left: 20px;
+}
+.gallery_post li {
+	list-style: none;
+	display: inline;
+	padding-right: 10px;
+}
 
 #likebtn{
+	clear: both;
 	position: relative;
 	bottom: -15px;
 }

@@ -12,18 +12,19 @@
 		.$row['post_body'].'<br />
 
 		<div id="likebtn" onclick="hitLike()"><img src="assets/icon_glik.png" width="42px" height="42px"></div>
-		<img src="assets/icon_comm.png" class="showcomments" width="30px" height="30px" >
-
+		<img src="assets/icon_comm.png" class="commentBtn" width="30px" height="30px" >
+		
 		</div>
-		<div id="comments">
+
+		<div class="comments">
 			<form method="POST" action="newcomment.php">
 				<input id="comment_input" type="text">
-				<input type="submit" value="ENTER" />
 			</form>
 		</div>
+
 		
 		'; 
+		}
 
-
-	}
+		echo '<br /><br />';
 ?>
