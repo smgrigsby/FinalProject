@@ -29,7 +29,7 @@
 			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet" type="text/css">
         	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 
-        	<link href="css/main.css" rel="stylesheet">
+        	<link href="../css/main.css" rel="stylesheet">
 			<style> 
 			
 

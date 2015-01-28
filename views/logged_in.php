@@ -39,7 +39,7 @@
 
         <!-- <textarea  rows="5" cols="65"></textarea>
         <button id="saveInput">SAVE</button>  -->
-						<form action="newpost.php" method="POST">
+						<form action="classes/newpost.php" method="POST">
 							<input id="post_type" type="hidden" value="1">
 							<input id="post_title" class= "input_title" type="text" value="ADD A TITLE">
 							<input id="post_body" class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
@@ -48,7 +48,7 @@
 						</form>
 				</div>
 				<div id="albumpost">
-					<form enctype="multipart/form-data" action="newpost.php" method="POST">
+					<form enctype="multipart/form-data" action="classes/newpost.php" method="POST">
 							<input class= "input_title" type="text" value="ADD A TITLE">
 							<input class= "input_body" type="text" value="SAY A LITTLE SOMETHING...">
 							<input name="userfile" type="file" /><br />
@@ -57,7 +57,7 @@
 						</form>
 				</div>
 				<div id="storypost">
-					<form action="newpost.php" method="POST">
+					<form action="classes/newpost.php" method="POST">
 						<input class= "input_body" type="text" value="TELL A STORY...">
 						<input class="submitBtn" type="submit"  name="save" value="Save" />
 					</form>
@@ -102,7 +102,7 @@
 				</div>
 		<!-- BEGIN Accounts Tab -->
 				<div id='account'>
-					<form action='update_user.php' method='POST'>
+					<form action='classes/update_user.php' method='POST'>
 						<div class='content_box'>
 							First Name: <input type="text" class="setting_input" name="fname" <?php echo 'value="'.$_SESSION['f_name'] .'">' ?><br />
 							Last Name: <input type="text" class="setting_input" name="lname" <?php echo 'value="'.$_SESSION['l_name'] .'">' ?><br />
@@ -222,7 +222,7 @@
 							<td>'.$row['user_name'].'</td>
 							<td>N/A</td>
 							<td>'.$row['address'].'</td>
-							<td> <a href="delete_account.php?id='.$row['user_id'].'">Delete</a>
+							<td> <a href="classes/remove_viewer.php?id='.$row['user_id'].'">Delete</a>
 						</tr>'; }
 							?>
 					</table>
