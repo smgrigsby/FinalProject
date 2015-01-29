@@ -1,7 +1,3 @@
-<!-- Project: Baby Grigsby
-Author: Sarah Meister Grigsby 
-Date: January 2015 -->
-
 <?php
 
 $user="root";
@@ -15,6 +11,6 @@ $user="root";
 	
 	$stmt->execute();
 
-	header('Location: ../index.php');
+	header('Location: index.php');
 	die();
 ?>

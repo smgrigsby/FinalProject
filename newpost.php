@@ -1,7 +1,3 @@
-<!-- Project: Baby Grigsby
-Author: Sarah Meister Grigsby 
-Date: January 2015 -->
-
 <?php 
   		$user="root"; $pass="root";
       $dbh = new PDO("mysql:host=localhost;dbname=login;port=8887", $user, $pass);
@@ -11,7 +7,7 @@ Date: January 2015 -->
 
       $stmt->execute(array(':post_type' => '1', ':post_title' => 'Something New', ':post_body' => 'Insert'));
 
-  header('Location: ../index.php');
+  header('Location: index.php');
 	die();
 
 

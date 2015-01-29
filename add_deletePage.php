@@ -1,7 +1,3 @@
-<!-- Project: Baby Grigsby
-Author: Sarah Meister Grigsby 
-Date: January 2015 -->
-
 <?php 
   		$user="root"; $pass="root";
         $dbh = new PDO("mysql:host=localhost;dbname=login;port=8887", $user, $pass);
@@ -21,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			</html>', ':status' => '2'));
 
 
-	header('Location: ../index.php');
+	header('Location: index.php');
 	die();
 }
 
@@ -30,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 	$stmt->bindValue(':id', $_GET['id'],  PDO::PARAM_INT);
 	$stmt->execute();
 
-	header('Location: ../index.php');
+	header('Location: index.php');
 	die();
 }
 	?>

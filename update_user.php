@@ -1,7 +1,3 @@
-<!-- Project: Baby Grigsby
-Author: Sarah Meister Grigsby 
-Date: January 2015 -->
-
 <?php
 
 $user="root";
@@ -10,19 +6,21 @@ $user="root";
 
 
 	$stmt=$dbh->prepare("UPDATE users SET f_name=:f_name,l_name=:l_name, user_email=:user_email, bgcolor=:bgcolor
-		WHERE user_name = :id");			
+		WHERE user_id = :id");			
 	
 		$stmt->bindValue(':f_name', $_POST['fname'], PDO::PARAM_STR);
 		$stmt->bindValue(':l_name', $_POST['lname'], PDO::PARAM_STR);
 		$stmt->bindValue(':user_email', $_POST['email'], PDO::PARAM_STR);
 		$stmt->bindValue(':bgcolor', $_POST['color'],  PDO::PARAM_STR);
-		$stmt->bindValue(':id', $_POST['user'],  PDO::PARAM_INT);
+		$stmt->bindValue(':id', $_SESSION['user_id'],  PDO::PARAM_INT);
 
 		$stmt->execute();
 
 
 
-header('Location: ../index.php');
+header('Location: index.php');
 die();
 ?>
+
+
 

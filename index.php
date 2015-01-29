@@ -3,20 +3,7 @@ Author: Sarah Meister Grigsby
 Date: January 2015 -->
 
 <?php
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        $user="root"; $pass="root";
-        $dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
-
-        $post_type=$_POST['post_type'];
-        $post_title=$_POST['post_title'];
-        $post_body=$_POST['post_body'];
-
-        $stmt = $dbh->prepare("INSERT INTO posts (post_type, post_title, post_body) VALUES (:post_type, :post_type, :post_body)");
-        $stmt->bindParam(':post_type', $post_type);
-        $stmt->bindParam(':post_type', $post_title);
-        $stmt->bindParam(':post_body', $post_body);
-        $stmt->execute();
-    };                      
+                     
 
 /**
  * A simple, clean and secure PHP Login Script / MINIMAL VERSION

@@ -39,14 +39,13 @@ Date: January 2015 -->
 					$stmt->execute();
 					$result=$stmt->fetchall(PDO::FETCH_ASSOC);
 					foreach($result as $row){ echo 
-						'<li><a href="classes/display_pages.php?id='.$row['id'].'">'.$row['post_title'].'</a></li>'; }
+						'<li><a href="display_pages.php?id='.$row['id'].'">'.$row['post_title'].'</a></li>'; }
 				?> </ul>
 			</div>
 			<!-- Archives Tab -->	
 			<div id="archive_menu" class="menu_view">
-				<h3> Recent Posts </h3>
-				<h3> Recent Comments </h3>
-				<h3> Archives </h3>
+				<div id="col_left"><h3>Archives</h3></div>
+
 			</div>
 			<!-- Search Tab -->	
 			<div id="search_menu" class="menu_view">
@@ -57,16 +56,31 @@ Date: January 2015 -->
 			</div>
 			<!-- Settings Tab -->	
 			<div id="settings_menu" class="menu_view">
-				<h3> Basic Info </h3>
-				<p> FIRST NAME: KARA LAST NAME: RICHARDSON</p>
-				<p> DISPLAY AS: AUNT KARA</p>
-				<p>CITY: BOTHELL STATE: WASHINGTON</p>
-				<p>EMAIL: KJRICHARDSON@GMAIL.COM</p>
-				<p>CHANGE PASSWORD</p>
+				
+				<?php 
+				echo '<div id="col_left"><h3> Basic Info </h3><form action="update_user.php" method="POST">
+				<input type="hidden" name="user" value="'.$_SESSION['user_name'].'">
+				Name (Display As): <input type="text" class="setting_input" name="nickname" value="'.$_SESSION['nickname'].'"><br/>
+				Email Address: <input type="text" class="setting_input" name="email" value="'.$_SESSION['user_email'].'"><br/>
+				City, State: <input type="text" class="setting_input" name="address" value="'.$_SESSION['address'].'">
+				</div>
+				<div id="col_midd">
+				<h3>Profile Picture</h3>
+				<img src="assets/'.$_SESSION['avatar'].'" width="160px" height="160px" />
+				<input name="userfile" type="file" /><br /></div>
+				<div id="col_right"><h3>Notifications</h3>
+				<p>Do you want to recieve email notifications?</p>
+				<input type="radio" name="notifications" value="on"> Turn On <br />
+				<input type="radio" name="notifications" value="off" checked> Turn Off </div>
+				</form>
+
+				'
+
+				?>
 			</div>
 		
 		<div class="user_greeting">
-				<h3> Welcome <?php echo $_SESSION['user_name']; ?>!</h3>
+				<h3> Welcome <?php echo $_SESSION['nickname']; ?>!</h3>
 				<a href='index.php?logout'>Logout</a> <!--"index.php?logout" is just my simplified form of "index.php?logout=true" -->
 			</div>
 		<?php 
@@ -81,10 +95,11 @@ Date: January 2015 -->
 			  			'.$row['post_title'].' '.$row['post_body'].'<br />
 
 						<div id="likebtn" onclick="hitLike()"><img src="assets/icon_glik.png" width="42px" height="42px"></div>
-						<img src="assets/icon_comm.png" class="commentBtn" width="30px" height="30px" >
+						<a id="commentBtn" href="javascript:toggle();"><img src="assets/icon_comm.png"  width="30px" height="30px" ></a>
 					</div>
-
-					<div class="comments">
+					<div id="comments" style="display: none">
+						<img src="assets/'.$_SESSION['avatar'].'" width="50px" height="50px" />
+						<h5>'.$_SESSION['nickname'].' </h5>
 						<form method="POST" action="newcomment.php">
 						<input id="comment_input" type="text">
 						</form>
@@ -114,16 +129,21 @@ Date: January 2015 -->
 			$(function() {
 				$("#homeview").tabs();
 			
+
 			});
 			
-		$(document).ready(function(){
-  			$(".commentBtn").click(function(){
-    			$(".comments").toggle();
-  			});
-		});
-		
+		function toggle(){
+			var ele = document.getElementById("comments");
 			
-		
+
+			if(ele.style.display == "block") {
+				ele.style.display = "none";
+				
+			}else{
+				ele.style.display = "block";
+				
+			}
+		}
 			
 		</script>
 

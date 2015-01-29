@@ -1,7 +1,3 @@
-<!-- Project: Baby Grigsby
-Author: Sarah Meister Grigsby 
-Date: January 2015 -->
-
 <?php 
 	$user="root"; $pass="root";
 	$dbh = new PDO('mysql:host=localhost;dbname=login;port=8887', $user, $pass);
@@ -33,7 +29,7 @@ Date: January 2015 -->
 			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet" type="text/css">
         	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 
-        	<link href="../css/main.css" rel="stylesheet">
+        	<link href="css/main.css" rel="stylesheet">
 			<style> 
 			
 

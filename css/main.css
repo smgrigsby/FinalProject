@@ -134,7 +134,7 @@ header a:visited {
 #ckbx { margin: 5px;}
 
 #signin .login_input, #signup .login_input, .content_box .setting_input,
-.input_title, .input_body, .invite_input  {
+.input_title, .input_body, .invite_input, #settings_menu .setting_input  {
 	height: 26px;
 	background-color: #FAFAFA;
 	width: 98%;
@@ -149,7 +149,8 @@ header a:visited {
 }
 
 #signin .submitBtn, #signup .submitBtn, #settings .submitBtn, 
-#dashboard .submitBtn, #invites .submitBtn, #search_menu .submitBtn {
+#dashboard .submitBtn, #invites .submitBtn, #search_menu .submitBtn,
+#settings_menu .submitBtn {
 	background-color: #293542;
 	border: none;
 	padding: 10px;
@@ -217,11 +218,17 @@ table {
 	width: 96%;
 }
 
+table th{
+	text-align: left;
+	margin-left:0;
+}
+
 .mem_dash footer {
 	position: relative;
 }
 #sidebar {
 	position:relative;
+	width: 160px;
 	float: left;
 	background-color: #fff;
 }
@@ -290,7 +297,7 @@ table {
 	padding: 20px;
 	float: left;
 	margin-bottom: 20px;
-	/*margin-top: -50px;*/
+	margin-top: 20px;
 }
 
 #post_container ul{ 
@@ -302,13 +309,35 @@ padding-right: 20px;
 	}
 #comments_feed{
 	float: right;
-	width: 30%;
-	height: 400px;
+	width: 25%;
+	height: 500px;
 	margin-right: 30px;
+	margin-top: 20px;
+	padding: 20px;
+	overflow: scroll;
 }
+#comments_feed img{
+	float: left;
+	margin-right: 10px;
+}
+.recent_comment{
+	background-color:#FAFAFA;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #E6E6E6;
+}
+
+.feed a, .feed a:visited{
+	text-decoration: none;
+	font-weight: bold;
+	color: #293542;
+}
+
 #recentpost_feed, #saveddrafts_feed {
 	float: left;
 	width: 31%;
+	height: 150px;
+	overflow: scroll;
 }
 #recentpost_feed{
 	margin-right: 20px;
@@ -321,6 +350,51 @@ padding-right: 20px;
 .feed h3 {
 	text-transform: uppercase;
 }
+
+#comments_feed h3{
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+#comments_feed a{
+	float: right;
+	margin-top: -30px;
+}
+
+.feed p {
+	
+	margin-left: 0;
+}
+
+.input_body {
+	height: 100px;
+}
+
+#newinvite p{
+	padding-left: 20px;
+}
+#settings_menu{
+	height: 280px;
+}
+
+#archive_menu{
+height: 80px;
+	}
+#col_left, #col_midd, #col_right{
+	float: left;
+	width: 25%;
+	padding: 20px;
+	border-right: 1px solid #E6E6E6;
+}
+#settings_menu h3{
+	margin-top: 0;
+}
+#settings_menu .submitBtn{
+	position: relative;
+	top: 300px;
+	left: 60%;
+}
+
 /* HOME PAGE VIEW **********************************************/
 
 #homeview li {
@@ -363,6 +437,7 @@ padding-right: 20px;
 
 .post_display{
 	margin-left: 30%;
+	margin-top: 30px;
 	padding: 20px;
 	border-radius: 5px;
 	width: 60%;
@@ -370,7 +445,7 @@ padding-right: 20px;
 	border: 1px solid #E6E6E6;
 }
 
-.comments{
+#comments{
 	background-color: #F2F2F2;
 	border: 1px solid #D8D8D8;
 	margin-bottom: 30px;
@@ -379,8 +454,20 @@ padding-right: 20px;
 	margin-left: 31%;
 	width: 58%;
 }
+
+#comments img{
+	float:left;
+	margin-right: 10px;
+}
+
+#comments h5 { 
+	margin-top: 0;
+	text-transform: uppercase;
+}
 #comment_input{
 	width: 90%;
+	float: left;
+	margin-top: -30px;
 }
 .date_dot{
 	float: left;
@@ -388,7 +475,7 @@ padding-right: 20px;
 	margin-left: 25%;
 }
 
-.commentBtn {
+#commentBtn {
 	position: relative;
 	float:right;
 	right: 10px;

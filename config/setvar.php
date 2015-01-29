@@ -19,6 +19,9 @@ foreach($result as $row){
 	$_SESSION['l_name']=$row['l_name'];
 	$_SESSION['bgcolor']=$row['bgcolor'];
 	$_SESSION['user_type']=$row['user_type'];
-	}
+	$_SESSION['avatar']=$row['avatar'];
+	$_SESSION['nickname']=$row['nick_name'];
+	$_SESSION['address']=$row['address'];
+	};
 
 ?>
